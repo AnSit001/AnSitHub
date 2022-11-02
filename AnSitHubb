@@ -487,4 +487,3 @@ game.Players.LocalPlayer.Character.Humanoid.Health = -10000
 wait()
 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-11336.1221, 331.748993, -10364.5312, -0.258864403, 0, -0.965913653, 0, 1, 0, 0.965913653, 0, -0.258864403)
 end)
-end)
