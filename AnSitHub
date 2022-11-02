@@ -1,28 +1,44 @@
+game:GetService("StarterGui"):SetCore("SendNotification", {
+            Title = "AnSitHub";
+            Text = "DISCORD: AnSit#0650"})
+wait(2)
+
+game:GetService("StarterGui"):SetCore("SendNotification", {
+            Title = "AnSitHub";
+            Text = "FB: An Sit"})
+wait(2)
+
+
+game:GetService("StarterGui"):SetCore("SendNotification", {
+            Title = "AnSitHub";
+            Text = "Script Made By AnSit"})
+wait(2)
+game:GetService("StarterGui"):SetCore("SendNotification", {
+            Title = "AnSitHub";
+            Text = "GUI WILL LOAD IN"}) 
+wait(1)
+game:GetService("StarterGui"):SetCore("SendNotification", {
+            Title = "AnSitHub";
+            Text = "1"}) 
+wait(1)
+game:GetService("StarterGui"):SetCore("SendNotification", {
+            Title = "AnSitHub";
+            Text = "2"}) 
+wait(1)
+game:GetService("StarterGui"):SetCore("SendNotification", {
+            Title = "AnSitHub";
+            Text = "3"}) 
+wait(0.5)
+game:GetService("StarterGui"):SetCore("SendNotification", {
+            Title = "AnSitHub";
+            Text = "THANKS FOR USING :)"}) 
+wait(1)
+            
+
 local library = loadstring(game:HttpGet("https://raw.githubusercontent.com/vozoid/ui-backups/main/uwuware-v1.lua"))()
 local client = game:GetService("Players").LocalPlayer
 local infarm = false
 local cancelled = false
-game:GetService("StarterGui"):SetCore("SendNotification", {
-    Title = "An Sit Dz";
-            Text = "La Mot Nguoi Rat Dep Trai"})
-game:GetService("StarterGui"):SetCore("SendNotification", {
-    Title = "An Sit Dz";
-            Text = "La Mot Nguoi Rat Dep Trai"})
-game:GetService("StarterGui"):SetCore("SendNotification", {
-    Title = "An Sit Dz";
-            Text = "La Mot Nguoi Rat Dep Trai"})
-game:GetService("StarterGui"):SetCore("SendNotification", {
-            Title = "An Sit Dz";
-            Text = "La Mot Nguoi Rat Dep Trai"})
-game:GetService("StarterGui"):SetCore("SendNotification", {
-            Title = "An Sit Dz";
-            Text = "La Mot Nguoi Rat Dep Trai"})
-game:GetService("StarterGui"):SetCore("SendNotification", {
-            Title = "An Sit Dz";
-            Text = "La Mot Nguoi Rat Dep Trai"})
-game:GetService("StarterGui"):SetCore("SendNotification", {
-            Title = "An Sit Dz";
-            Text = "La Mot Nguoi Rat Dep Trai"})
 local function farm()
 infarm = true
 --// Services
