@@ -17,12 +17,12 @@ function v129(p15)
     return v130;
 end;
 
-Notification.new("<Color=Yellow>QUEST COMPLETED!<Color=/>"):Display()
-Notification.new("Earned <Color=Yellow>1,000,000,000,000 Exp.<Color=/> (+ None)"):Display()
-Notification.new("Earned <Color=Green>$25,000<Color=/>"):Display()
+Notification.new("<Color=Blue>AnSit Hub!<Color=/>"):Display()
+Notification.new("Earned <Color=Red>AnSitHubIsNumber1!<Color=/> (+ None)"):Display()
+Notification.new("Earned <Color=Viotlet>Now U Will See Magic<Color=/>"):Display()
 plr.Data.Exp.Value = 999999999999
 plr.Data.Beli.Value = plr.Data.Beli.Value + 25000
-
+wait(5)
 delay = 0
 count = 0
 while plr.Data.Exp.Value - EXPFunction(Data.Level.Value) > 0 do
