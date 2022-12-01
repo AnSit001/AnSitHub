@@ -1,38 +1,37 @@
-game:GetService("StarterGui"):SetCore("SendNotification", {
-            Title = "AnSitHub";
-            Text = "DISCORD: AnSit#0650"})
-wait(2)
+local plr = game:GetService("Players").LocalPlayer
+local Notification = require(game:GetService("ReplicatedStorage").Notification)
+local Data = plr:WaitForChild("Data")
+local EXPFunction = require(game.ReplicatedStorage:WaitForChild("EXPFunction"))
+local LevelUp = require(game:GetService("ReplicatedStorage").Effect.Container.LevelUp)
+local Sound = require(game:GetService("ReplicatedStorage").Util.Sound)
+local LevelUpSound = game:GetService("ReplicatedStorage").Util.Sound.Storage.Other:FindFirstChild("LevelUp_Proxy") or game:GetService("ReplicatedStorage").Util.Sound.Storage.Other:FindFirstChild("LevelUp")
+function v129(p15)
+    local v130 = p15;
+    while true do
+        local v131, v132 = string.gsub(v130, "^(-?%d+)(%d%d%d)", "%1,%2");
+        v130 = v131;
+        if v132 == 0 then
+            break;
+        end;    
+    end;
+    return v130;
+end;
 
-game:GetService("StarterGui"):SetCore("SendNotification", {
-            Title = "AnSitHub";
-            Text = "FB: An Sit"})
-wait(2)
-
-
-game:GetService("StarterGui"):SetCore("SendNotification", {
-            Title = "AnSitHub";
-            Text = "Script Made By AnSit"})
-wait(2)
-game:GetService("StarterGui"):SetCore("SendNotification", {
-            Title = "AnSitHub";
-            Text = "GUI WILL LOAD IN"}) 
+Notification.new("<Color=Purple>An Sit Hub<Color=/>"):Display()
+Notification.new("<Color=Blue>Facebook:<Color=/> <Color=Red>An Sit<Color=/>"):Display()
+Notification.new("<Color=Blue>Discord:<Color=/> <Color=Red>AnSit#0650<Color=/>"):Display()
+wait(1.5)
+Notification.new("<Color=Green>GUI WILL LOAD IN :<Color=/>"):Display()
+wait(1.5)
+Notification.new("<Color=Black>1<Color=/>"):Display()
 wait(1)
-game:GetService("StarterGui"):SetCore("SendNotification", {
-            Title = "AnSitHub";
-            Text = "1"}) 
+Notification.new("<Color=Black>2<Color=/>"):Display()
 wait(1)
-game:GetService("StarterGui"):SetCore("SendNotification", {
-            Title = "AnSitHub";
-            Text = "2"}) 
-wait(1)
-game:GetService("StarterGui"):SetCore("SendNotification", {
-            Title = "AnSitHub";
-            Text = "3"}) 
+Notification.new("<Color=Black>3<Color=/>"):Display()
 wait(0.5)
-game:GetService("StarterGui"):SetCore("SendNotification", {
-            Title = "AnSitHub";
-            Text = "THANKS FOR USING :)"}) 
-wait(0.2)
+Notification.new("<Color=Yellow>Thanks For Using <3<Color=/>"):Display()
+wait(0.5)
+
 local library = loadstring(game:HttpGet("https://raw.githubusercontent.com/naypramx/Ui__Project/Script/XeNonUi", true))()
 library:CreateWatermark("AnSitHub | Blox Fruits")
 local CenterHubNo1 = library:CreateWindow("AnSitHub | Blox Fruits                 [Right Control]",Enum.KeyCode.RightControl)
