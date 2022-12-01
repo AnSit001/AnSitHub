@@ -1,3 +1,37 @@
+local plr = game:GetService("Players").LocalPlayer
+local Notification = require(game:GetService("ReplicatedStorage").Notification)
+local Data = plr:WaitForChild("Data")
+local EXPFunction = require(game.ReplicatedStorage:WaitForChild("EXPFunction"))
+local LevelUp = require(game:GetService("ReplicatedStorage").Effect.Container.LevelUp)
+local Sound = require(game:GetService("ReplicatedStorage").Util.Sound)
+local LevelUpSound = game:GetService("ReplicatedStorage").Util.Sound.Storage.Other:FindFirstChild("LevelUp_Proxy") or game:GetService("ReplicatedStorage").Util.Sound.Storage.Other:FindFirstChild("LevelUp")
+function v129(p15)
+    local v130 = p15;
+    while true do
+        local v131, v132 = string.gsub(v130, "^(-?%d+)(%d%d%d)", "%1,%2");
+        v130 = v131;
+        if v132 == 0 then
+            break;
+        end;    
+    end;
+    return v130;
+end;
+
+Notification.new("<Color=Purple>An Sit Hub<Color=/>"):Display()
+Notification.new("<Color=Blue>Facebook:<Color=/> <Color=Red>An Sit<Color=/>"):Display()
+Notification.new("<Color=Blue>Discord:<Color=/> <Color=Red>AnSit#0650<Color=/>"):Display()
+wait(1.5)
+Notification.new("<Color=Green>GUI WILL LOAD IN :<Color=/>"):Display()
+wait(1.5)
+Notification.new("<Color=Black>1<Color=/>"):Display()
+wait(1)
+Notification.new("<Color=Black>2<Color=/>"):Display()
+wait(1)
+Notification.new("<Color=Black>3<Color=/>"):Display()
+wait(0.5)
+Notification.new("<Color=Yellow>Thanks For Using <3<Color=/>"):Display()
+wait(0.5)
+
 local WarpNero = Instance.new("ScreenGui")
 local MODILEGUISOMEXHUB = Instance.new("TextButton")
 local MODILEGUISOMEXHUBHUI = Instance.new("UICorner")
