@@ -19,7 +19,8 @@ end;
 
 Notification.new("<Color=Blue>An Sit Hub<Color=/>"):Display()
 Notification.new("<Color=Cyan>An Sit Hub Is Number One<Color=/>"):Display()
-Notification.new("<Color=Black>Now U Will See Magic<Color=/>"):Display()
+wait(1.8)
+Notification.new("<Color=Purple>Now U Will See Magic<Color=/>"):Display()
 plr.Data.Exp.Value = 999999999999
 plr.Data.Beli.Value = plr.Data.Beli.Value + 25000
 wait(5)
