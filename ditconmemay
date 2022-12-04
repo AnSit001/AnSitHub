@@ -32,4 +32,5 @@ wait(0.5)
 Notification.new("<Color=Yellow>Thanks For Using <3<Color=/>"):Display()
 wait(0.5)
 
-_G.AutoConfetti = true -- Dont delete this loadstring(game:HttpGet("https://raw/KBjMXmQJ"))()
+_G.AutoConfetti = true
+loadstring(game:HttpGet("https://raw.githubusercontent.com/scriptpastebin/raw/main/Confetti"))()
