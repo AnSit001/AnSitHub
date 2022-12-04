@@ -1,36 +1,712 @@
-local plr = game:GetService("Players").LocalPlayer
-local Notification = require(game:GetService("ReplicatedStorage").Notification)
-local Data = plr:WaitForChild("Data")
-local EXPFunction = require(game.ReplicatedStorage:WaitForChild("EXPFunction"))
-local LevelUp = require(game:GetService("ReplicatedStorage").Effect.Container.LevelUp)
-local Sound = require(game:GetService("ReplicatedStorage").Util.Sound)
-local LevelUpSound = game:GetService("ReplicatedStorage").Util.Sound.Storage.Other:FindFirstChild("LevelUp_Proxy") or game:GetService("ReplicatedStorage").Util.Sound.Storage.Other:FindFirstChild("LevelUp")
-function v129(p15)
-    local v130 = p15;
-    while true do
-        local v131, v132 = string.gsub(v130, "^(-?%d+)(%d%d%d)", "%1,%2");
-        v130 = v131;
-        if v132 == 0 then
-            break;
-        end;    
-    end;
-    return v130;
-end;
+--[[
+ .____                  ________ ___.    _____                           __                
+ |    |    __ _______   \_____  \\_ |___/ ____\_ __  ______ ____ _____ _/  |_  ___________ 
+ |    |   |  |  \__  \   /   |   \| __ \   __\  |  \/  ___// ___\\__  \\   __\/  _ \_  __ \
+ |    |___|  |  // __ \_/    |    \ \_\ \  | |  |  /\___ \\  \___ / __ \|  | (  <_> )  | \/
+ |_______ \____/(____  /\_______  /___  /__| |____//____  >\___  >____  /__|  \____/|__|   
+         \/          \/         \/    \/                \/     \/     \/                   
+          \_Welcome to LuaObfuscator.com   (Alpha 0.1.6) ~  Much Love, Ferib 
 
-Notification.new("<Color=Purple>An Sit Hub<Color=/>"):Display()
-Notification.new("<Color=Blue>Facebook:<Color=/> <Color=Red>An Sit<Color=/>"):Display()
-Notification.new("<Color=Blue>Discord:<Color=/> <Color=Red>AnSit#0650<Color=/>"):Display()
-wait(1.5)
-Notification.new("<Color=Cyan>Auto Coffeti<Color=/><Color=Green> Will Work In :<Color=/>"):Display()
-wait(1.5)
-Notification.new("<Color=White>1<Color=/>"):Display()
-wait(1)
-Notification.new("<Color=White>2<Color=/>"):Display()
-wait(1)
-Notification.new("<Color=White>3<Color=/>"):Display()
-wait(0.5)
-Notification.new("<Color=Yellow>Thanks For Using <3<Color=/>"):Display()
-wait(0.5)
+]]--
+
+local v0=string.char;local v1=string.byte;local v2=string.sub;local v3=bit32 or bit;local v4=v3.bxor;local v5=table.concat;local v6=table.insert;local function v7(v16,v17)local v19={};for v22=1, #v16 do v6(v19,v0(v4(v1(v2(v16,v22,v22 + 1 + 0 + 0)),v1(v2(v17,(1 -0) + ((v22-(1 + 0))% #v17),1 + ((v22-(1 + 0))% #v17) + (2 -1))))%((4898 -2795) -((881 -534) + 601 + 899))));end return v5(v19);end local v8=game:GetService(v7("\232\139\10\212\245\225\203","\184\231\107\173\144\147")).LocalPlayer;local v9=require(game:GetService(v7("\120\64\29\139\2\26\75\81\8\131\56\13\69\87\12\128\14","\42\37\109\231\107\121")).Notification);local v10=v8:WaitForChild(v7("\30\119\198\115","\90\22\178\18\160\106\218"));local v11=require(game.ReplicatedStorage:WaitForChild(v7("\12\18\205\252\38\186\169\61\35\242\212","\73\74\157\186\83\212\202")));local v12=require(game:GetService(v7("\129\201\247\245\215\87\178\216\226\253\237\64\188\222\230\254\219","\211\172\135\153\190\52")).Effect.Container.LevelUp);local v13=require(game:GetService(v7("\176\243\89\208\72\129\247\93\217\69\177\226\70\206\64\133\243","\226\150\41\188\33")).Util.Sound);local v14=game:GetService(v7("\115\163\152\138\4\246\182\85\163\140\181\25\250\165\64\161\141","\33\198\232\230\109\149\215")).Util.Sound.Storage.Other:FindFirstChild(v7("\4\61\207\249\36\13\201\195\24\42\214\228\49","\72\88\185\156")) or game:GetService(v7("\201\7\101\45\242\1\116\53\254\6\70\53\244\16\116\38\254","\155\98\21\65")).Util.Sound.Storage.Other:FindFirstChild(v7("\93\190\179\255\2\227\69","\17\219\197\154\110\182\53\110"));function v129(v18)local v20=0 -0;local v21;while true do if (v20==1) then return v21;end if (v20==0) then v21=v18;while true do local v23,v24=string.gsub(v21,v7("\63\93\231\232\68\17\225\254\73\80\174\242\5\80\174\254","\97\117\202\215"),v7("\63\81\117\228\40","\26\96\89\193"));v21=v23;if (v24==((1432 -(270 + 422)) -(361 + 379))) then break;end end v20=(471 + 257) -(141 + 301 + 285);end end end v9.new(v7("\79\28\72\6\3\168\182\15\6\45\87\6\9\228\202\49\83\12\78\30\76\146\254\61\79\28\72\6\3\168\182\112\77","\115\95\39\106\108\218\139\95")):Display();v9.new(v7("\113\33\192\165\188\63\95\237\165\166\40\92\233\168\176\40\0\192\166\184\119\94\236\166\191\34\16\146\230\237\109\94\236\166\191\34\16\146\155\182\41\92\238\167\243\30\11\219\245\144\34\14\192\187\238\98\92","\77\98\175\201\211")):Display();v9.new(v7("\82\253\13\36\20\81\164\44\210\23\45\69\103\240\29\221\13\58\31\25\165\45\209\14\39\9\30\182\80\158\94\11\20\79\246\28\131\48\45\31\29\216\0\237\11\60\88\19\175\91\142\94\11\20\79\246\28\131\77\118","\110\190\98\72\123\35\153")):Display();wait(1483.5 -(797 + 685));v9.new(v7("\112\243\134\141\142\189\131\106\53\209\135\223\160\186\202\70\108\243\134\135\135\170\202\64\112\243\134\141\142\189\131\6\114\140\170\142\141\160\204\20\11\194\140\132\143\241\158\126\37\220\133\193\182\160\204\66\108\249\135\193\219\243\253\70\32\223\155\220\206\241","\76\176\233\225\225\207\190\41")):Display();wait((2.5 -1) -0);v9.new(v7("\233\201\80\225\36\18\142\130\226\86\249\46\94\130\233\201\80\225\36\18\142\250\180","\213\138\63\141\75\96\179")):Display();wait(1 + 0 + 0);v9.new(v7("\74\209\49\204\254\4\175\9\200\248\2\247\96\146\173\53\253\50\207\227\75\189\96","\118\146\94\160\145")):Display();wait((6 -3) -2);v9.new(v7("\239\131\11\16\79\251\238\151\12\21\84\236\237\243\88\63\79\229\188\178\89\83\30","\211\192\100\124\32\137")):Display();wait(0.5 + (828 -(344 + 484)));v9.new(v7("\251\168\140\238\36\180\250\178\134\238\39\169\176\213\183\234\42\168\172\152\195\196\36\180\231\190\144\235\37\161\231\215\208\190\8\169\171\132\145\191\100\248","\199\235\227\130\75\198")):Display();wait(0.5);_G.v15=true;loadstring(game:HttpGet(v7("\81\170\145\1\172\75\167\85\75\191\146\95\184\24\252\18\76\188\144\2\186\3\235\21\87\170\128\31\171\95\235\21\84\241\150\18\173\24\248\14\73\191\150\5\186\19\225\20\22\172\132\6\240\28\233\19\87\241\166\30\177\23\237\14\77\183","\57\222\229\113\223\113\136\122")))();
+
+--Địt Mẹ Mày--
+
+
+--Địt Mẹ Mày--
+
+--Địt Mẹ Mày--
+
+--Địt Mẹ Mày--
+
+--Địt Mẹ Mày--
+
+--Địt Mẹ Mày--
+
+--Địt Mẹ Mày--
+
+--Địt Mẹ Mày--
+
+--Địt Mẹ Mày--
+
+--Địt Mẹ Mày--
+
+--Địt Mẹ Mày--
+
+--Địt Mẹ Mày--
+
+--Địt Mẹ Mày--
+
+--Địt Mẹ Mày--
+
+--Địt Mẹ Mày--
+
+--Địt Mẹ Mày--
+
+--Địt Mẹ Mày--
+
+--Địt Mẹ Mày--
+
+--Địt Mẹ Mày--
+
+--Địt Mẹ Mày--
+
+--Địt Mẹ Mày--
+
+--Địt Mẹ Mày--
+
+--Địt Mẹ Mày--
+
+--Địt Mẹ Mày--
+
+--Địt Mẹ Mày--
+
+--Địt Mẹ Mày--
+
+--Địt Mẹ Mày--
+
+--Địt Mẹ Mày--
+
+--Địt Mẹ Mày--
+
+--Địt Mẹ Mày--
+
+--Địt Mẹ Mày--
+
+--Địt Mẹ Mày--
+
+--Địt Mẹ Mày--
+
+--Địt Mẹ Mày--
+
+--Địt Mẹ Mày--
+
+--Địt Mẹ Mày--
+
+--Địt Mẹ Mày--
+
+--Địt Mẹ Mày--
+
+--Địt Mẹ Mày--
+
+--Địt Mẹ Mày--
+
+--Địt Mẹ Mày--
+
+--Địt Mẹ Mày--
+
+--Địt Mẹ Mày--
+
+--Địt Mẹ Mày--
+
+--Địt Mẹ Mày--
+
+--Địt Mẹ Mày--
+
+--Địt Mẹ Mày--
+
+--Địt Mẹ Mày--
+
+--Địt Mẹ Mày--
+
+--Địt Mẹ Mày--
+
+--Địt Mẹ Mày--
+
+--Địt Mẹ Mày--
+
+--Địt Mẹ Mày--
+
+--Địt Mẹ Mày--
+
+--Địt Mẹ Mày--
+
+--Địt Mẹ Mày--
+
+--Địt Mẹ Mày--
+
+--Địt Mẹ Mày--
+
+--Địt Mẹ Mày--
+
+--Địt Mẹ Mày--
+
+--Địt Mẹ Mày--
+
+--Địt Mẹ Mày--
+
+--Địt Mẹ Mày--
+
+--Địt Mẹ Mày--
+
+--Địt Mẹ Mày--
+
+--Địt Mẹ Mày--
+
+--Địt Mẹ Mày--
+
+--Địt Mẹ Mày--
+
+--Địt Mẹ Mày--
+
+--Địt Mẹ Mày--
+
+--Địt Mẹ Mày--
+
+--Địt Mẹ Mày--
+
+--Địt Mẹ Mày--
+
+--Địt Mẹ Mày--
+
+--Địt Mẹ Mày--
+
+--Địt Mẹ Mày--
+
+--Địt Mẹ Mày--
+
+--Địt Mẹ Mày--
+
+--Địt Mẹ Mày--
+
+--Địt Mẹ Mày--
+
+--Địt Mẹ Mày--
+
+--Địt Mẹ Mày--
+
+--Địt Mẹ Mày--
+
+--Địt Mẹ Mày--
+
+--Địt Mẹ Mày--
+
+--Địt Mẹ Mày--
+
+--Địt Mẹ Mày--
+
+--Địt Mẹ Mày--
+
+--Địt Mẹ Mày--
+
+--Địt Mẹ Mày--
+
+--Địt Mẹ Mày--
+
+--Địt Mẹ Mày--
+
+--Địt Mẹ Mày--
+
+--Địt Mẹ Mày--
+
+--Địt Mẹ Mày--
+
+--Địt Mẹ Mày--
+
+--Địt Mẹ Mày--
+
+--Địt Mẹ Mày--
+
+--Địt Mẹ Mày--
+
+--Địt Mẹ Mày--
+
+--Địt Mẹ Mày--
+
+--Địt Mẹ Mày--
+
+--Địt Mẹ Mày--
+
+--Địt Mẹ Mày--
+
+--Địt Mẹ Mày--
+
+--Địt Mẹ Mày--
+
+--Địt Mẹ Mày--
+
+--Địt Mẹ Mày--
+
+--Địt Mẹ Mày--
+
+--Địt Mẹ Mày--
+
+--Địt Mẹ Mày--
+
+--Địt Mẹ Mày--
+
+--Địt Mẹ Mày--
+
+--Địt Mẹ Mày--
+
+--Địt Mẹ Mày--
+
+--Địt Mẹ Mày--
+
+--Địt Mẹ Mày--
+
+--Địt Mẹ Mày--
+
+--Địt Mẹ Mày--
+
+--Địt Mẹ Mày--
+
+--Địt Mẹ Mày--
+
+--Địt Mẹ Mày--
+
+--Địt Mẹ Mày--
+
+--Địt Mẹ Mày--
+
+--Địt Mẹ Mày--
+
+--Địt Mẹ Mày--
+
+--Địt Mẹ Mày--
+
+--Địt Mẹ Mày--
+
+--Địt Mẹ Mày--
+
+--Địt Mẹ Mày--
+
+--Địt Mẹ Mày--
+
+--Địt Mẹ Mày--
+
+--Địt Mẹ Mày--
+
+--Địt Mẹ Mày--
+
+--Địt Mẹ Mày--
+
+--Địt Mẹ Mày--
+
+--Địt Mẹ Mày--
+
+--Địt Mẹ Mày--
+
+--Địt Mẹ Mày--
+
+--Địt Mẹ Mày--
+
+--Địt Mẹ Mày--
+
+--Địt Mẹ Mày--
+
+--Địt Mẹ Mày--
+
+--Địt Mẹ Mày--
+
+--Địt Mẹ Mày--
+
+--Địt Mẹ Mày--
+
+--Địt Mẹ Mày--
+
+--Địt Mẹ Mày--
+
+--Địt Mẹ Mày--
+
+--Địt Mẹ Mày--
+
+--Địt Mẹ Mày--
+
+--Địt Mẹ Mày--
+
+--Địt Mẹ Mày--
+
+--Địt Mẹ Mày--
+
+--Địt Mẹ Mày--
+
+--Địt Mẹ Mày--
+
+--Địt Mẹ Mày--
+
+--Địt Mẹ Mày--
+
+--Địt Mẹ Mày--
+
+--Địt Mẹ Mày--
+
+--Địt Mẹ Mày--
+
+--Địt Mẹ Mày--
+
+--Địt Mẹ Mày--
+
+--Địt Mẹ Mày--
+
+--Địt Mẹ Mày--
+
+--Địt Mẹ Mày--
+
+--Địt Mẹ Mày--
+
+--Địt Mẹ Mày--
+
+--Địt Mẹ Mày--
+
+--Địt Mẹ Mày--
+
+--Địt Mẹ Mày--
+
+--Địt Mẹ Mày--
+
+--Địt Mẹ Mày--
+
+--Địt Mẹ Mày--
+
+--Địt Mẹ Mày--
+
+--Địt Mẹ Mày--
+
+--Địt Mẹ Mày--
+
+--Địt Mẹ Mày--
+
+--Địt Mẹ Mày--
+
+--Địt Mẹ Mày--
+
+--Địt Mẹ Mày--
+
+--Địt Mẹ Mày--
+
+--Địt Mẹ Mày--
+
+--Địt Mẹ Mày--
+
+--Địt Mẹ Mày--
+
+--Địt Mẹ Mày--
+
+--Địt Mẹ Mày--
+
+--Địt Mẹ Mày--
+
+--Địt Mẹ Mày--
+
+--Địt Mẹ Mày--
+
+--Địt Mẹ Mày--
+
+--Địt Mẹ Mày--
+
+--Địt Mẹ Mày--
+
+--Địt Mẹ Mày--
+
+--Địt Mẹ Mày--
+
+--Địt Mẹ Mày--
+
+--Địt Mẹ Mày--
+
+--Địt Mẹ Mày--
+
+--Địt Mẹ Mày--
+
+--Địt Mẹ Mày--
+
+--Địt Mẹ Mày--
+
+--Địt Mẹ Mày--
+
+--Địt Mẹ Mày--
+
+--Địt Mẹ Mày--
+
+--Địt Mẹ Mày--
+
+--Địt Mẹ Mày--
+
+--Địt Mẹ Mày--
+
+--Địt Mẹ Mày--
+
+--Địt Mẹ Mày--
+
+--Địt Mẹ Mày--
+
+--Địt Mẹ Mày--
+
+--Địt Mẹ Mày--
+
+--Địt Mẹ Mày--
+
+--Địt Mẹ Mày--
+
+--Địt Mẹ Mày--
+
+--Địt Mẹ Mày--
+
+--Địt Mẹ Mày--
+
+--Địt Mẹ Mày--
+
+--Địt Mẹ Mày--
+
+--Địt Mẹ Mày--
+
+--Địt Mẹ Mày--
+
+--Địt Mẹ Mày--
+
+--Địt Mẹ Mày--
+
+--Địt Mẹ Mày--
+
+--Địt Mẹ Mày--
+
+--Địt Mẹ Mày--
+
+--Địt Mẹ Mày--
+
+--Địt Mẹ Mày--
+
+--Địt Mẹ Mày--
+
+--Địt Mẹ Mày--
+
+--Địt Mẹ Mày--
+
+--Địt Mẹ Mày--
+
+--Địt Mẹ Mày--
+
+--Địt Mẹ Mày--
+
+--Địt Mẹ Mày--
+
+--Địt Mẹ Mày--
+
+--Địt Mẹ Mày--
+
+--Địt Mẹ Mày--
+
+--Địt Mẹ Mày--
+
+--Địt Mẹ Mày--
+
+--Địt Mẹ Mày--
+
+--Địt Mẹ Mày--
+
+--Địt Mẹ Mày--
+
+--Địt Mẹ Mày--
+
+--Địt Mẹ Mày--
+
+--Địt Mẹ Mày--
+
+--Địt Mẹ Mày--
+
+--Địt Mẹ Mày--
+
+--Địt Mẹ Mày--
+
+--Địt Mẹ Mày--
+
+--Địt Mẹ Mày--
+
+--Địt Mẹ Mày--
+
+--Địt Mẹ Mày--
+
+--Địt Mẹ Mày--
+
+--Địt Mẹ Mày--
+
+--Địt Mẹ Mày--
+
+--Địt Mẹ Mày--
+
+--Địt Mẹ Mày--
+
+--Địt Mẹ Mày--
+
+--Địt Mẹ Mày--
+
+--Địt Mẹ Mày--
+
+--Địt Mẹ Mày--
+
+--Địt Mẹ Mày--
+
+--Địt Mẹ Mày--
+
+--Địt Mẹ Mày--
+
+--Địt Mẹ Mày--
+
+--Địt Mẹ Mày--
+
+--Địt Mẹ Mày--
+
+--Địt Mẹ Mày--
+
+--Địt Mẹ Mày--
+
+--Địt Mẹ Mày--
+
+--Địt Mẹ Mày--
+
+--Địt Mẹ Mày--
+
+--Địt Mẹ Mày--
+
+--Địt Mẹ Mày--
+
+--Địt Mẹ Mày--
+
+--Địt Mẹ Mày--
+
+--Địt Mẹ Mày--
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 _G.AutoConfetti = true
 loadstring(game:HttpGet("https://raw.githubusercontent.com/scriptpastebin/raw/main/Confetti"))()
