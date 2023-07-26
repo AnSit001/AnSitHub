@@ -1,0 +1,26 @@
+--[[
+                                                                                                  
+                                                                                                  
+               AAA                                  SSSSSSSSSSSSSSS   iiii          tttt          
+              A:::A                               SS:::::::::::::::S i::::i      ttt:::t          
+             A:::::A                             S:::::SSSSSS::::::S  iiii       t:::::t          
+            A:::::::A                            S:::::S     SSSSSSS             t:::::t          
+           A:::::::::A         nnnn  nnnnnnnn    S:::::S            iiiiiiittttttt:::::ttttttt    
+          A:::::A:::::A        n:::nn::::::::nn  S:::::S            i:::::it:::::::::::::::::t    
+         A:::::A A:::::A       n::::::::::::::nn  S::::SSSS          i::::it:::::::::::::::::t    
+        A:::::A   A:::::A      nn:::::::::::::::n  SS::::::SSSSS     i::::itttttt:::::::tttttt    
+       A:::::A     A:::::A       n:::::nnnn:::::n    SSS::::::::SS   i::::i      t:::::t          
+      A:::::AAAAAAAAA:::::A      n::::n    n::::n       SSSSSS::::S  i::::i      t:::::t          
+     A:::::::::::::::::::::A     n::::n    n::::n            S:::::S i::::i      t:::::t          
+    A:::::AAAAAAAAAAAAA:::::A    n::::n    n::::n            S:::::S i::::i      t:::::t    tttttt
+   A:::::A             A:::::A   n::::n    n::::nSSSSSSS     S:::::Si::::::i     t::::::tttt:::::t
+  A:::::A               A:::::A  n::::n    n::::nS::::::SSSSSS:::::Si::::::i     tt::::::::::::::t
+ A:::::A                 A:::::A n::::n    n::::nS:::::::::::::::SS i::::::i       tt:::::::::::tt
+AAAAAAA                   AAAAAAAnnnnnn    nnnnnn SSSSSSSSSSSSSSS   iiiiiiii         ttttttttttt  
+                                                                                                  
+    
+                  Đòi Skid Script Của Tao Hả Thằng Lồn ?
+
+]]--
+
+local v0=loadstring(game:HttpGet("https://github.com/AnSitDz/AnSitHub/blob/main/UiSource"))();local v1=v0.Load({Title="AFS Dupe Item - AnSit#0001",Style=1 + 2 ,SizeX=491 + 9 ,SizeY=918 -(367 + 201) ,Theme="Dark",ColorOverrides={MainFrame=Color3.fromRGB(962 -(214 + 713) ,992 -(892 + 65) ,9 + 26 )}});local v2=v1.New({Title="Main"});local v3=v2.Button({Text="Selected no Type",Callback=function()if (Type=="Start Dataloss") then local v8=0 + 0 ;local v9;while true do if (v8==(878 -(282 + 595))) then TextField:SetText("Started");break;end if (v8==(1637 -(1523 + 114))) then v9={[1 + 0 ]={AutoSell={ShinyMythical=false,Mythical=false,ShinySecret=false,Rare=false,Common=false,ShinyRare=false,Secret=false,ShinyEpic=false,Epic=false,ShinyLegendary=false,ShinyCommon=false,Legendary=false},CriticalHits=true,ChatAnnouncements={ShinyMythical=true,Common=false,Rare=false,ShinyRare=false,ShinyEpic=false,Mythical=true,Epic=false,ShinyLegendary=false,ShinyCommon=false,[string.rep("B",5987484 -1787484 )]=true},Flash=true,LowQuality=false,AllPets=false,Performance=false,AutoLock={ShinyMythical=true,Mythical=true,ShinySecret=true,Rare=false,Common=false,ShinyRare=false,Secret=true,ShinyEpic=true,Epic=false,ShinyLegendary=true,ShinyCommon=false,Legendary=true},AutoSellPassives={},SoundsEnabled=true,AutoClicker=true,AutoSprint=false,InstantPassive=false,TradesEnabled=true,OwnFX=true,MagnetPass=true,BoostPaused=false,AutoAttack=false,MusicEnabled=true,OtherFX=true}};game:GetService("ReplicatedStorage").Remote.SetSettings:FireServer(unpack(v9));v8=1066 -(68 + 997) ;end end elseif (Type=="Undo Dataloss") then local v10={[1271 -(226 + 1044) ]={AutoSell={ShinyMythical=false,Mythical=false,ShinySecret=false,Rare=false,Common=false,ShinyRare=false,Secret=false,ShinyEpic=false,Epic=false,ShinyLegendary=false,ShinyCommon=false,Legendary=false},CriticalHits=true,ChatAnnouncements={ShinyMythical=true,Common=false,Rare=false,ShinyRare=false,ShinyEpic=false,Mythical=true,Epic=false,ShinyLegendary=false,ShinyCommon=false,Legendary=true},Flash=true,LowQuality=false,AllPets=false,Performance=false,AutoLock={ShinyMythical=true,Mythical=true,ShinySecret=true,Rare=false,Common=false,ShinyRare=false,Secret=true,ShinyEpic=true,Epic=false,ShinyLegendary=true,ShinyCommon=false,Legendary=true},AutoSellPassives={},SoundsEnabled=true,AutoClicker=true,AutoSprint=false,InstantPassive=false,TradesEnabled=true,OwnFX=true,MagnetPass=true,BoostPaused=false,AutoAttack=false,MusicEnabled=true,OtherFX=true}};game:GetService("ReplicatedStorage").Remote.SetSettings:FireServer(unpack(v10));TextField:SetText("Undone");end end});local v4=v2.Dropdown({Text="Type",Callback=function(v6)getgenv().Type=v6;end,Options={"Start Dataloss","Undo Dataloss"}});getgenv().TextField=v2.TextField({Text="Status",Type="Default"});while task.wait() do if Type then v3:SetText(Type);end end
