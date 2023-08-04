@@ -235,7 +235,7 @@ local Properties = {
 	},
 	Menu = {
 		Name = "More",
-		AutoButtonColor = false,
+		AutoButtonColor = true,
 		BackgroundTransparency = 1,
 		Image = "http://www.roblox.com/asset/?id=5555108481",
 		Size = UDim2.fromOffset(20,20),
@@ -292,7 +292,7 @@ local function CircleAnim(GuiObject, EndColour, StartColour)
 	Circle.ZIndex = 200
 	Circle.Parent = GuiObject
 	local Size = GuiObject.AbsoluteSize.X
-	--abc
+	TweenService:Create(Circle, TweenInfo.new(1), {Position = UDim2.fromScale(PX,PY) - UDim2.fromOffset(Size/2,Size/2), ImageTransparency = 1, ImageColor3 = EndColour, Size = UDim2.fromOffset(Size,Size)}):Play()
 	spawn(function()
 		wait(2)
 		Circle:Destroy()
