@@ -4,5 +4,26 @@
 
 Vie : Truoc khi Freeze Data, open inventory fighter it nhat 1 lan.
 
+B1: Neu m muon dupe thua ko bi mat item thi an vao Mode, "Start Freeze Data", sau do bam vao nut "Start Freeze Data" o tren, Neu m muon biet da thanh cong chua, thi vao inventory fighter, sau do check team, neu co 1 team ten la "AnSit_Hub" thi da thanh cong.
+
+B2: Neu nhu da dupe thanh cong, m chon mode "Stop Freeze Data", sau do an vao nut "Stop Freeze Data" o tren, vay la m co the nhan item r.
+
+- Nếu m dupe bằng trade thì chỉ cần làm B1, sau khi đã trade xog chỉ cần rejoin.
+
+
+
+
+
+---------------------------------------------------
+
+
+
+
+
 Eng: Before clicking on Freeze Data, pls open inventory fighter at least once
 
+Step1: if u want no lose item when lose in dupe machine, click on Mode, click on "Start Freeze Data", and click on button "Start Freeze Data" on top, if u want know it has done or no, go to ur fighter inventory, check ur team list, if have 1 team name "AnSit_Hub", it has done.
+
+Step2: if u has win on dupe machine, click on "Stop Freeze Data", and click on button "Stop Freeze Data" on top, now u can clam item.
+
+- If u dupe by trade, u just need do Step1, when trade has done, u just rejoin.
