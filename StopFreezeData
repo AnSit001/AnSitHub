@@ -1,1 +1,1 @@
-game.ReplicatedStorage.Remote.SetDungeonSetting:FireServer("Theme", "JoJo")
+game:GetService("ReplicatedStorage").Remote.SetDungeonSetting:FireServer("Theme", "Naruto")
