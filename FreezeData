@@ -1,1 +1,1 @@
-game.ReplicatedStorage.Remote.SetDungeonSetting:FireServer("Theme", string.rep("B", 4200000))
+game:GetService("ReplicatedStorage").Remote.SetDungeonSetting:FireServer("Theme",  "\192")
