@@ -1,0 +1,9 @@
+OrionLib:MakeNotification({
+    Name = "AnSit Hub",
+    Content = "Wait A Few Seconds...",
+    Image = "rbxassetid://4483345998",
+    Time = 3
+})
+wait(3)
+
+game:GetService("TeleportService"):Teleport(game.PlaceId, game:GetService("Players").LocalPlayer)
