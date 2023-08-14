@@ -1,3 +1,15 @@
+local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
+ 
+OrionLib:MakeNotification({
+    Name = "AnSit Hub",
+    Content = "Translate Every language To English",
+    Image = "rbxassetid://4483345998",
+    Time = 3
+})
+OrionLib:Init()
+
+
+
 if not game['Loaded'] then game['Loaded']:Wait() end; repeat wait(.06) until game:GetService('Players').LocalPlayer ~= nil
 local YourLang = "vi" -- Language code that the messages are going to be translated to
 
@@ -263,13 +275,16 @@ local properties = {
     TextSize = 16;
 }
 
-game:GetService("StarterGui"):SetCore("SendNotification",
-    {
-        Title = "Chat Translator",
-        Text = "Ported to Google Translate",
-        Duration = 3
-    }
-)
+local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
+ 
+OrionLib:MakeNotification({
+    Name = "AnSit Hub",
+    Content = "Auto Translate Starting.",
+    Image = "rbxassetid://4483345998",
+    Time = 3
+})
+OrionLib:Init()
+
                   
 properties.Text = "[TR] To send messages in a language, say > followed by the target language/language code, e.g.: >ru or >russian. To disable (go back to original language), say >d."
 StarterGui:SetCore("ChatMakeSystemMessage", properties)
