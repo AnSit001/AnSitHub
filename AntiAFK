@@ -1,0 +1,10 @@
+OrionLib:MakeNotification({
+    Name = "AnSit Hub",
+    Content = "Anti AFK Started",
+    Image = "rbxassetid://4483345998",
+    Time = 3
+})
+
+wait(3)
+
+game:GetService("Players").LocalPlayer.Idled:connect(function() game:GetService("VirtualUser"):ClickButton2(Vector2.new()) end)
