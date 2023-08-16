@@ -1,16 +1,18 @@
 --[[
 
-Ui Make By AnSit
+Rayfield Interface Suite
+by Sirius
 
-@All Copyright by AnSit
+shlex | Designing + Programming
+iRay  | Programming
 
 ]]
 
 
 
-local Release = "Beta"
+local Release = "Beta 8"
 local NotificationDuration = 6.5
-local RayfieldFolder = "AnSitHub"
+local RayfieldFolder = "Rayfield"
 local ConfigurationFolder = RayfieldFolder.."/Configurations"
 local ConfigurationExtension = ".rfld"
 
@@ -112,9 +114,9 @@ local Players = game:GetService("Players")
 local CoreGui = game:GetService("CoreGui")
 
 -- Interface Management
-local Rayfield = game:GetObjects("rbxassetid://14433970779")[1]
+local Rayfield = game:GetObjects("rbxassetid://10804731440")[1]
 
-Rayfield.Enabled = true
+Rayfield.Enabled = false
 
 
 if gethui then
@@ -529,7 +531,7 @@ function RayfieldLibrary:Notify(NotificationSettings)
 				NewAction.MouseButton1Click:Connect(function()
 					local Success, Response = pcall(Action.Callback)
 					if not Success then
-						print("AnSit Hub | Action: "..Action.Name.." Callback Error " ..tostring(Response))
+						print("Rayfield | Action: "..Action.Name.." Callback Error " ..tostring(Response))
 					end
 					ActionCompleted = true
 				end)
@@ -546,7 +548,7 @@ function RayfieldLibrary:Notify(NotificationSettings)
 		if NotificationSettings.Image then
 			Notification.Icon.Image = "rbxassetid://"..tostring(NotificationSettings.Image) 
 		else
-			Notification.Icon.Image = "rbxassetid://14433970779"
+			Notification.Icon.Image = "rbxassetid://3944680095"
 		end
 
 		Notification.Icon.ImageTransparency = 1
@@ -635,7 +637,7 @@ end
 
 function Hide()
 	Debounce = true
-	RayfieldLibrary:Notify({Title = "Ui Hidden", Content = "The Ui Has Hidden, Tap RightShift For Show It Again", Duration = 7})
+	RayfieldLibrary:Notify({Title = "Interface Hidden", Content = "The interface has been hidden, you can unhide the interface by tapping RightShift", Duration = 7})
 	TweenService:Create(Main, TweenInfo.new(0.5, Enum.EasingStyle.Quint), {Size = UDim2.new(0, 470, 0, 400)}):Play()
 	TweenService:Create(Main.Topbar, TweenInfo.new(0.5, Enum.EasingStyle.Quint), {Size = UDim2.new(0, 470, 0, 45)}):Play()
 	TweenService:Create(Main, TweenInfo.new(0.5, Enum.EasingStyle.Quint), {BackgroundTransparency = 1}):Play()
@@ -819,7 +821,7 @@ end
 
 function Minimise()
 	Debounce = true
-	Topbar.ChangeSize.Image = "rbxassetid://"..14433970779
+	Topbar.ChangeSize.Image = "rbxassetid://"..11036884234
 
 	for _, tabbtn in ipairs(TabList:GetChildren()) do
 		if tabbtn.ClassName == "Frame" and tabbtn.Name ~= "Placeholder" then
@@ -2468,8 +2470,7 @@ function RayfieldLibrary:LoadConfiguration()
 		pcall(function()
 			if isfile(ConfigurationFolder .. "/" .. CFileName .. ConfigurationExtension) then
 				LoadConfiguration(readfile(ConfigurationFolder .. "/" .. CFileName .. ConfigurationExtension))
-				RayfieldLibrary:Notify({Title = "AnSit Hub", Content = "
-The Config Is Auto Loaded"})
+				RayfieldLibrary:Notify({Title = "Configuration Loaded", Content = "The configuration file for this script has been loaded from a previous session"})
 			end
 		end)
 	end
