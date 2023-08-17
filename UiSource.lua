@@ -12,9 +12,9 @@ iRay  | Programming
 
 local Release = "AnSit Hub"
 local NotificationDuration = 6.5
-local RayfieldFolder = "Rayfield"
+local RayfieldFolder = "AnSit"
 local ConfigurationFolder = RayfieldFolder.."/Configurations"
-local ConfigurationExtension = ".rfld"
+local ConfigurationExtension = ".txt"
 
 
 
