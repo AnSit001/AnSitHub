@@ -10,11 +10,11 @@ iRay  | Programming
 
 
 
-local Release = "Beta 8"
+local Release = "AnSit Hub"
 local NotificationDuration = 6.5
-local RayfieldFolder = "Rayfield"
+local RayfieldFolder = "AnSit_Hub"
 local ConfigurationFolder = RayfieldFolder.."/Configurations"
-local ConfigurationExtension = ".rfld"
+local ConfigurationExtension = ".txt"
 
 
 
@@ -548,7 +548,7 @@ function RayfieldLibrary:Notify(NotificationSettings)
 		if NotificationSettings.Image then
 			Notification.Icon.Image = "rbxassetid://"..tostring(NotificationSettings.Image) 
 		else
-			Notification.Icon.Image = "rbxassetid://3944680095"
+			Notification.Icon.Image = "rbxassetid://14433970779"
 		end
 
 		Notification.Icon.ImageTransparency = 1
@@ -637,7 +637,7 @@ end
 
 function Hide()
 	Debounce = true
-	RayfieldLibrary:Notify({Title = "Interface Hidden", Content = "The interface has been hidden, you can unhide the interface by tapping RightShift", Duration = 7})
+	RayfieldLibrary:Notify({Title = "Hidden Ui", Content = "TheUi has been hidden, tap RightShift for show it again.", Duration = 7})
 	TweenService:Create(Main, TweenInfo.new(0.5, Enum.EasingStyle.Quint), {Size = UDim2.new(0, 470, 0, 400)}):Play()
 	TweenService:Create(Main.Topbar, TweenInfo.new(0.5, Enum.EasingStyle.Quint), {Size = UDim2.new(0, 470, 0, 45)}):Play()
 	TweenService:Create(Main, TweenInfo.new(0.5, Enum.EasingStyle.Quint), {BackgroundTransparency = 1}):Play()
@@ -883,9 +883,9 @@ function RayfieldLibrary:CreateWindow(Settings)
 	Main.Shadow.Image.ImageTransparency = 1
 	LoadingFrame.Version.TextTransparency = 1
 	LoadingFrame.Title.Text = Settings.LoadingTitle or "Rayfield Interface Suite"
-	LoadingFrame.Subtitle.Text = Settings.LoadingSubtitle or "by Sirius"
+	LoadingFrame.Subtitle.Text = Settings.LoadingSubtitle or "by AnSit"
 	if Settings.LoadingTitle ~= "Rayfield Interface Suite" then
-		LoadingFrame.Version.Text = "Rayfield UI"
+		LoadingFrame.Version.Text = "AnSit Hub"
 	end
 	Topbar.Visible = false
 	Elements.Visible = false
