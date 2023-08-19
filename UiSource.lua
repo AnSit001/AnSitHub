@@ -1,12 +1,7 @@
 --[[
 
-Rayfield Interface Suite
-by Sirius
 
-shlex | Designing + Programming
-iRay  | Programming
-
-]]
+]]--
 
 
 
@@ -114,9 +109,9 @@ local Players = game:GetService("Players")
 local CoreGui = game:GetService("CoreGui")
 
 -- Interface Management
-local Rayfield = game:GetObjects("rbxassetid://10804731440")[1]
+local Rayfield = game:GetObjects("rbxassetid://14433970779")[1]
 
-Rayfield.Enabled = false
+Rayfield.Enabled = true
 
 
 if gethui then
@@ -531,7 +526,7 @@ function RayfieldLibrary:Notify(NotificationSettings)
 				NewAction.MouseButton1Click:Connect(function()
 					local Success, Response = pcall(Action.Callback)
 					if not Success then
-						print("Rayfield | Action: "..Action.Name.." Callback Error " ..tostring(Response))
+						print("AnSit Hub | Action: "..Action.Name.." Callback Error " ..tostring(Response))
 					end
 					ActionCompleted = true
 				end)
@@ -755,7 +750,7 @@ end
 
 function Maximise()
 	Debounce = true
-	Topbar.ChangeSize.Image = "rbxassetid://"..10137941941
+	Topbar.ChangeSize.Image = "rbxassetid://"..14433970779
 
 
 	TweenService:Create(Topbar.UIStroke, TweenInfo.new(0.5, Enum.EasingStyle.Quint), {Transparency = 1}):Play()
@@ -821,7 +816,7 @@ end
 
 function Minimise()
 	Debounce = true
-	Topbar.ChangeSize.Image = "rbxassetid://"..11036884234
+	Topbar.ChangeSize.Image = "rbxassetid://"..14433970779
 
 	for _, tabbtn in ipairs(TabList:GetChildren()) do
 		if tabbtn.ClassName == "Frame" and tabbtn.Name ~= "Placeholder" then
@@ -992,8 +987,8 @@ function RayfieldLibrary:CreateWindow(Settings)
 
 		if not Passthrough then
 			local AttemptsRemaining = math.random(2,6)
-			Rayfield.Enabled = false
-			local KeyUI = game:GetObjects("rbxassetid://11380036235")[1]
+			Rayfield.Enabled = true
+			local KeyUI = game:GetObjects("rbxassetid://14433970779")[1]
 
 			if gethui then
 				KeyUI.Parent = gethui()
@@ -1663,7 +1658,7 @@ function RayfieldLibrary:CreateWindow(Settings)
 					TweenService:Create(Input, TweenInfo.new(0.6, Enum.EasingStyle.Quint), {BackgroundColor3 = Color3.fromRGB(85, 0, 0)}):Play()
 					TweenService:Create(Input.UIStroke, TweenInfo.new(0.6, Enum.EasingStyle.Quint), {Transparency = 1}):Play()
 					Input.Title.Text = "Callback Error"
-					print("Rayfield | "..InputSettings.Name.." Callback Error " ..tostring(Response))
+					print("AnSit Hub | "..InputSettings.Name.." Callback Error " ..tostring(Response))
 					wait(0.5)
 					Input.Title.Text = InputSettings.Name
 					TweenService:Create(Input, TweenInfo.new(0.6, Enum.EasingStyle.Quint), {BackgroundColor3 = SelectedTheme.ElementBackground}):Play()
@@ -1867,7 +1862,7 @@ function RayfieldLibrary:CreateWindow(Settings)
 						TweenService:Create(Dropdown, TweenInfo.new(0.6, Enum.EasingStyle.Quint), {BackgroundColor3 = Color3.fromRGB(85, 0, 0)}):Play()
 						TweenService:Create(Dropdown.UIStroke, TweenInfo.new(0.6, Enum.EasingStyle.Quint), {Transparency = 1}):Play()
 						Dropdown.Title.Text = "Callback Error"
-						print("Rayfield | "..DropdownSettings.Name.." Callback Error " ..tostring(Response))
+						print("AnSit Hub | "..DropdownSettings.Name.." Callback Error " ..tostring(Response))
 						wait(0.5)
 						Dropdown.Title.Text = DropdownSettings.Name
 						TweenService:Create(Dropdown, TweenInfo.new(0.6, Enum.EasingStyle.Quint), {BackgroundColor3 = SelectedTheme.ElementBackground}):Play()
@@ -1940,7 +1935,7 @@ function RayfieldLibrary:CreateWindow(Settings)
 					TweenService:Create(Dropdown, TweenInfo.new(0.6, Enum.EasingStyle.Quint), {BackgroundColor3 = Color3.fromRGB(85, 0, 0)}):Play()
 					TweenService:Create(Dropdown.UIStroke, TweenInfo.new(0.6, Enum.EasingStyle.Quint), {Transparency = 1}):Play()
 					Dropdown.Title.Text = "Callback Error"
-					print("Rayfield | "..DropdownSettings.Name.." Callback Error " ..tostring(Response))
+					print("AnSit Hub | "..DropdownSettings.Name.." Callback Error " ..tostring(Response))
 					wait(0.5)
 					Dropdown.Title.Text = DropdownSettings.Name
 					TweenService:Create(Dropdown, TweenInfo.new(0.6, Enum.EasingStyle.Quint), {BackgroundColor3 = SelectedTheme.ElementBackground}):Play()
@@ -2038,7 +2033,7 @@ function RayfieldLibrary:CreateWindow(Settings)
 							TweenService:Create(Keybind, TweenInfo.new(0.6, Enum.EasingStyle.Quint), {BackgroundColor3 = Color3.fromRGB(85, 0, 0)}):Play()
 							TweenService:Create(Keybind.UIStroke, TweenInfo.new(0.6, Enum.EasingStyle.Quint), {Transparency = 1}):Play()
 							Keybind.Title.Text = "Callback Error"
-							print("Rayfield | "..KeybindSettings.Name.." Callback Error " ..tostring(Response))
+							print("AnSit Hub | "..KeybindSettings.Name.." Callback Error " ..tostring(Response))
 							wait(0.5)
 							Keybind.Title.Text = KeybindSettings.Name
 							TweenService:Create(Keybind, TweenInfo.new(0.6, Enum.EasingStyle.Quint), {BackgroundColor3 = SelectedTheme.ElementBackground}):Play()
@@ -2159,7 +2154,7 @@ function RayfieldLibrary:CreateWindow(Settings)
 					TweenService:Create(Toggle, TweenInfo.new(0.6, Enum.EasingStyle.Quint), {BackgroundColor3 = Color3.fromRGB(85, 0, 0)}):Play()
 					TweenService:Create(Toggle.UIStroke, TweenInfo.new(0.6, Enum.EasingStyle.Quint), {Transparency = 1}):Play()
 					Toggle.Title.Text = "Callback Error"
-					print("Rayfield | "..ToggleSettings.Name.." Callback Error " ..tostring(Response))
+					print("AnSit Hub | "..ToggleSettings.Name.." Callback Error " ..tostring(Response))
 					wait(0.5)
 					Toggle.Title.Text = ToggleSettings.Name
 					TweenService:Create(Toggle, TweenInfo.new(0.6, Enum.EasingStyle.Quint), {BackgroundColor3 = SelectedTheme.ElementBackground}):Play()
@@ -2207,7 +2202,7 @@ function RayfieldLibrary:CreateWindow(Settings)
 					TweenService:Create(Toggle, TweenInfo.new(0.6, Enum.EasingStyle.Quint), {BackgroundColor3 = Color3.fromRGB(85, 0, 0)}):Play()
 					TweenService:Create(Toggle.UIStroke, TweenInfo.new(0.6, Enum.EasingStyle.Quint), {Transparency = 1}):Play()
 					Toggle.Title.Text = "Callback Error"
-					print("Rayfield | "..ToggleSettings.Name.." Callback Error " ..tostring(Response))
+					print("AnSit Hub | "..ToggleSettings.Name.." Callback Error " ..tostring(Response))
 					wait(0.5)
 					Toggle.Title.Text = ToggleSettings.Name
 					TweenService:Create(Toggle, TweenInfo.new(0.6, Enum.EasingStyle.Quint), {BackgroundColor3 = SelectedTheme.ElementBackground}):Play()
@@ -2322,7 +2317,7 @@ function RayfieldLibrary:CreateWindow(Settings)
 								TweenService:Create(Slider, TweenInfo.new(0.6, Enum.EasingStyle.Quint), {BackgroundColor3 = Color3.fromRGB(85, 0, 0)}):Play()
 								TweenService:Create(Slider.UIStroke, TweenInfo.new(0.6, Enum.EasingStyle.Quint), {Transparency = 1}):Play()
 								Slider.Title.Text = "Callback Error"
-								print("Rayfield | "..SliderSettings.Name.." Callback Error " ..tostring(Response))
+								print("AnSit Hub | "..SliderSettings.Name.." Callback Error " ..tostring(Response))
 								wait(0.5)
 								Slider.Title.Text = SliderSettings.Name
 								TweenService:Create(Slider, TweenInfo.new(0.6, Enum.EasingStyle.Quint), {BackgroundColor3 = SelectedTheme.ElementBackground}):Play()
@@ -2349,7 +2344,7 @@ function RayfieldLibrary:CreateWindow(Settings)
 					TweenService:Create(Slider, TweenInfo.new(0.6, Enum.EasingStyle.Quint), {BackgroundColor3 = Color3.fromRGB(85, 0, 0)}):Play()
 					TweenService:Create(Slider.UIStroke, TweenInfo.new(0.6, Enum.EasingStyle.Quint), {Transparency = 1}):Play()
 					Slider.Title.Text = "Callback Error"
-					print("Rayfield | "..SliderSettings.Name.." Callback Error " ..tostring(Response))
+					print("AnSit Hub | "..SliderSettings.Name.." Callback Error " ..tostring(Response))
 					wait(0.5)
 					Slider.Title.Text = SliderSettings.Name
 					TweenService:Create(Slider, TweenInfo.new(0.6, Enum.EasingStyle.Quint), {BackgroundColor3 = SelectedTheme.ElementBackground}):Play()
