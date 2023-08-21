@@ -1304,7 +1304,7 @@ function UILIB:Load(name, img, direction)
         task.spawn(function()
 	     while true do
 		task.wait(0.1)
-		parent.TopBar.ProfileMenu.Clock.TextLabel.Text = os.date("%x")
+		parent.TopBar.ProfileMenu.Clock.TextLabel.Text = os.date("%H")
 	     end
         end)
 	parent.TopBar.ProfileMenu.Title.TextLabel.Text = name
@@ -1313,7 +1313,7 @@ function UILIB:Load(name, img, direction)
 	elseif img == "Default" then
 
 	else
-		parent.MainBar.Logo.Image = "rbxassetid://14505324057"
+		parent.MainBar.Logo.Image = ""
 		end
 
 
