@@ -4,7 +4,7 @@ WalkTween = function(Root, Target, Speed)
     local Dist = (Root.Position - Target.p).magnitude
     local Tween = game:GetService("TweenService"):Create(Root, TweenInfo.new(Dist / Speed, Enum.EasingStyle.Linear), { CFrame = Target})
     Tween:Play()
-local   Tween = nil
+local Tween = nil
     Tween.Completed:wait()
     Root.Velocity = Vector3.zero
 end
