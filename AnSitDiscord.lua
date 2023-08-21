@@ -1153,7 +1153,7 @@ local Levels = {
     }
 }
 
-QuestsData.Quests = Quests
+local QuestsData.Quests = Quests
 
 function QuestsData.getQuest(Enemy)
     for i,v in pairs(game.Workspace.NPCs:GetChildren()) do
@@ -1203,8 +1203,8 @@ for i,v in pairs(Quests) do
     end
 end
 
-QuestsData.FirstSea = FirstSea
-QuestsData.SecondSea = SecondSea
-QuestsData.ThirdSea = ThirdSea
+local QuestsData.FirstSea = FirstSea
+local QuestsData.SecondSea = SecondSea
+local QuestsData.ThirdSea = ThirdSea
 
 return QuestsData
