@@ -10,3 +10,5 @@ WalkTween = function(Root, Target, Speed)
 end
 
 return WalkTween
+
+end
