@@ -461,7 +461,7 @@ local Quests = {
         EnemyName = "Pirate Millionaire",
         LevelQuest = 1,
         CFramePos = CFrame.new(-290.074677, 42.9034653, 5581.58984, 0.965929627, -0, -0.258804798, 0, 1, -0, 0.258804798, 0, 0.965929627),
-        QuestGiver = "",
+        QuestGiver = "Pirate Port Quest Giver",
         World = 3
     },
     Pistol_Billonaire = {
@@ -470,7 +470,7 @@ local Quests = {
         EnemyName = "Pistol Billionaire",
         LevelQuest = 2,
         CFramePos = CFrame.new(-290.074677, 42.9034653, 5581.58984, 0.965929627, -0, -0.258804798, 0, 1, -0, 0.258804798, 0, 0.965929627),
-        QuestGiver = "",
+        QuestGiver = "Pirate Port Quest Giver",
         World = 3
     },
     Dragon_Crew_Warrior = {
@@ -479,7 +479,7 @@ local Quests = {
         EnemyName = "Dragon Crew Warrior",
         LevelQuest = 1,
         CFramePos = CFrame.new(5832.83594, 51.6806107, -1101.51563, 0.898790359, -0, -0.438378751, 0, 1, -0, 0.438378751, 0, 0.898790359),
-        QuestGiver = "",
+        QuestGiver = "Amazon Quest Giver",
         Wolrd = 3
     },
     Dragon_Crew_Archer = {
@@ -488,7 +488,7 @@ local Quests = {
         EnemyName = "Dragon Crew Archer",
         LevelQuest = 2,
         CFramePos = CFrame.new(5833.1147460938, 51.60498046875, -1103.0693359375),
-        QuestGiver = "",
+        QuestGiver = "Amazon Quest Giver",
         World = 3
     },
     Female_Islander = {
@@ -497,7 +497,7 @@ local Quests = {
         EnemyName = "Female Islander",
         LevelQuest = 1,
         CFramePos = CFrame.new(5446.8793945313, 601.62945556641, 749.45672607422),
-        QuestGiver = "",
+        QuestGiver = "Amazon Area 2 Quest Giver",
         World = 3
     },
     Giant_Islander = {
@@ -506,7 +506,7 @@ local Quests = {
         EnemyName = "Giant Islander",
         LevelQuest = 2,
         CFramePos = CFrame.new(5446.8793945313, 601.62945556641, 749.45672607422),
-        QuestGiver = "",
+        QuestGiver = "Amazon Area 2 Quest Giver",
         Wolrd = 3
     },
     Marine_Commodore = {
@@ -515,7 +515,7 @@ local Quests = {
         EnemyName = "Marine Commodore",
         LevelQuest = 1,
         CFramePos = CFrame.new(2180.54126, 27.8156815, -6741.5498, -0.965929747, 0, 0.258804798, 0, 1, 0, -0.258804798, 0, -0.965929747),
-        QuestGiver = "",
+        QuestGiver = "Marine Tree Quest Giver",
         World = 3
     },
     Marine_Rear_Admiral = {
@@ -524,7 +524,7 @@ local Quests = {
         EnemyName = "Marine Rear Admiral",
         LevelQuest = 2,
         CFramePos = CFrame.new(2180.54126, 27.8156815, -6741.5498, -0.965929747, 0, 0.258804798, 0, 1, 0, -0.258804798, 0, -0.965929747),
-        QuestGiver = "",
+        QuestGiver = "Marine Tree Quest Giver",
         World = 3
     },
     Fishman_Raider = {
@@ -533,7 +533,7 @@ local Quests = {
         EnemyName = "Fishman Raider",
         LevelQuest = 1,
         CFramePos = CFrame.new(-10581.6563, 330.872955, -8761.18652, -0.882952213, 0, 0.469463557, 0, 1, 0, -0.469463557, 0, -0.882952213),
-        QuestGiver = "",
+        QuestGiver = "Turtle Adventure Quest Giver",
         World = 3
     },
     Fishman_Captain = {
@@ -542,7 +542,7 @@ local Quests = {
         EnemyName = "Fishman Captain",
         LevelQuest = 2,
         CFramePos = CFrame.new(-10581.6563, 330.872955, -8761.18652, -0.882952213, 0, 0.469463557, 0, 1, 0, -0.469463557, 0, -0.882952213),
-        QuestGiver = "",
+        QuestGiver = "Turtle Adventure Quest Giver",
         World = 3
     },
     Forest_Pirate = {
@@ -551,7 +551,7 @@ local Quests = {
         EnemyName = "Forest Pirate",
         LevelQuest = 1,
         CFramePos = CFrame.new(-13234.04, 331.488495, -7625.40137, 0.707134247, -0, -0.707079291, 0, 1, -0, 0.707079291, 0, 0.707134247),
-        QuestGiver = "",
+        QuestGiver = "Deep Forest Quest Giver",
         World = 3
     },
     Mythological_Pirate = {
@@ -560,7 +560,7 @@ local Quests = {
         EnemyName = "Mythological Pirate",
         LevelQuest = 2,
         CFramePos = CFrame.new(-13234.04, 331.488495, -7625.40137, 0.707134247, -0, -0.707079291, 0, 1, -0, 0.707079291, 0, 0.707134247),
-        QuestGiver = "",
+        QuestGiver = "Deep Forest Quest Giver",
         World = 3
     },
     Jungle_Pirate = {
@@ -569,7 +569,7 @@ local Quests = {
         EnemyName = "Jungle Pirate",
         LevelQuest = 1,
         CFramePos = CFrame.new(-12680.3818, 389.971039, -9902.01953, -0.0871315002, 0, 0.996196866, 0, 1, 0, -0.996196866, 0, -0.0871315002),
-        QuestGiver = "",
+        QuestGiver = "Deep Forest Area 2 Quest Giver",
         World = 3
     },
     Musketeer_Pirate = {
@@ -578,7 +578,7 @@ local Quests = {
         EnemyName = "Musketeer Pirate",
         LevelQuest = 2,
         CFramePos = CFrame.new(-12680.3818, 389.971039, -9902.01953, -0.0871315002, 0, 0.996196866, 0, 1, 0, -0.996196866, 0, -0.0871315002),
-        QuestGiver = "",
+        QuestGiver = "Deep Forest Area 2 Quest Giver",
         World = 3
     },
     Reborn_Skeleton = {
@@ -587,7 +587,7 @@ local Quests = {
         EnemyName = "Reborn Skeleton",
         LevelQuest = 1,
         CFramePos = CFrame.new(-9479.2168, 141.215088, 5566.09277, 0, 0, 1, 0, 1, -0, -1, 0, 0),
-        QuestGiver = "",
+        QuestGiver = "Haunted Castle Quest Giver 1",
         World = 3
     },
     Living_Zombie = {
@@ -596,7 +596,7 @@ local Quests = {
         EnemyName = "Living Zombie",
         LevelQuest = 2,
         CFramePos = CFrame.new(-9479.2168, 141.215088, 5566.09277, 0, 0, 1, 0, 1, -0, -1, 0, 0),
-        QuestGiver = "",
+        QuestGiver = "Haunted Castle Quest Giver 1",
         World = 3
     },
     Demonic_Soul = {
@@ -605,7 +605,7 @@ local Quests = {
         EnemyName = "Demonic Soul",
         LevelQuest = 1,
         CFramePos = CFrame.new(-9479.2168, 141.215088, 5566.09277, 0, 0, 1, 0, 1, -0, -1, 0, 0),
-        QuestGiver = "",
+        QuestGiver = "Haunted Castle Quest Giver 2",
         World = 3
     },
     Posessed_Mummy = {
@@ -614,7 +614,7 @@ local Quests = {
         EnemyName = "Posessed Mummy",
         LevelQuest = 2,
         CFramePos = CFrame.new(-9516.99316, 172.017181, 6078.46533, 0, 0, -1, 0, 1, 0, 1, 0, 0),
-        QuestGiver = "",
+        QuestGiver = "Haunted Castle Quest Giver 2",
         World = 3
     },
     Peanut_Scout = {
@@ -623,7 +623,7 @@ local Quests = {
         EnemyName = "Peanut Scout",
         LevelQuest = 1,
         CFramePos = CFrame.new(-2104.3908691406, 38.104167938232, -10194.21875, 0, 0, -1, 0, 1, 0, 1, 0, 0),
-        QuestGiver = "",
+        QuestGiver = "Peanut Quest Giver",
         World = 3
     },
     Peanut_President = {
@@ -632,7 +632,7 @@ local Quests = {
         EnemyName = "Peanut President",
         LevelQuest = 2,
         CFramePos = CFrame.new(-2104.3908691406, 38.104167938232, -10194.21875, 0, 0, -1, 0, 1, 0, 1, 0, 0),
-        QuestGiver = "",
+        QuestGiver = "Peanut Quest Giver",
         World = 3
     },
     Ice_Cream_Chef = {
@@ -641,7 +641,7 @@ local Quests = {
         EnemyName = "Ice Cream Chef",
         LevelQuest = 1,
         CFramePos = CFrame.new(-819.84533691406, 65.845329284668, -10965.487304688),
-        QuestGiver = "",
+        QuestGiver = "Ice Cream Quest Giver",
         World = 3
     },
     Ice_Cream_Commander = {
@@ -650,7 +650,7 @@ local Quests = {
         EnemyName = "Ice Cream Commander",
         LevelQuest = 2,
         CFramePos = CFrame.new(-819.84533691406, 65.845329284668, -10965.487304688),
-        QuestGiver = "",
+        QuestGiver = "Ice Cream Quest Giver",
         World = 3
     },
     Cookie_Crafter = {
@@ -659,7 +659,7 @@ local Quests = {
         EnemyName = "Cookie Crafter",
         LevelQuest = 1,
         CFramePos = CFrame.new(-2022.29858, 36.9275894, -12030.9766, -0.961273909, 0, -0.275594592, 0, 1, 0, 0.275594592, 0, -0.961273909),
-        QuestGiver = "",
+        QuestGiver = "Cake Quest Giver 1",
         World = 3
     },
     Cake_Guard = {
@@ -668,7 +668,7 @@ local Quests = {
         EnemyName = "Cake Guard",
         LevelQuest = 2,
         CFramePos = CFrame.new(-2022.29858, 36.9275894, -12030.9766, -0.961273909, 0, -0.275594592, 0, 1, 0, 0.275594592, 0, -0.961273909),
-        QuestGiver = "",
+        QuestGiver = "Cake Quest Giver 1",
         World = 3
     },
     Baking_Staff = {
@@ -677,7 +677,7 @@ local Quests = {
         EnemyName = "Baking Staff",
         LevelQuest = 1,
         CFramePos = CFrame.new(-1928.31763, 37.7296638, -12840.626, 0.951068401, -0, -0.308980465, 0, 1, -0, 0.308980465, 0, 0.951068401),
-        QuestGiver = "",
+        QuestGiver = "Cake Quest Giver 2",
         World = 3
     },
     Head_Baker = {
@@ -686,7 +686,7 @@ local Quests = {
         EnemyName = "Head Baker",
         LevelQuest = 2,
         CFramePos = CFrame.new(-1928.31763, 37.7296638, -12840.626, 0.951068401, -0, -0.308980465, 0, 1, -0, 0.308980465, 0, 0.951068401),
-        QuestGiver = "",
+        QuestGiver = "Cake Quest Giver 2",
         World = 3
     },
     Cocoa_Warrior = {
@@ -695,7 +695,7 @@ local Quests = {
         EnemyName = "Cocoa Warrior",
         LevelQuest = 1,
         CFramePos = CFrame.new(231.75, 23.90030288696289, -12200.2919921875),
-        QuestGiver = " ",
+        QuestGiver = "Chocolate Quest Giver 1",
         World = 3
     },
     Chocolate_Bar_Battler = {
@@ -704,7 +704,7 @@ local Quests = {
         EnemyName = "Chocolate Bar Battler",
         LevelQuest = 2,
         CFramePos = CFrame.new(231.75, 23.90030288696289, -12200.2919921875),
-        QuestGiver = " ",
+        QuestGiver = "Chocolate Quest Giver 1",
         World = 3
     },
     Sweet_Thief = {
@@ -713,7 +713,7 @@ local Quests = {
         EnemyName = "Sweet Thief",
         LevelQuest = 1,
         CFramePos = CFrame.new(151.1982421875, 23.890714645385742, -12774.6171875),
-        QuestGiver = " ",
+        QuestGiver = "Chocolate Quest Giver 2",
         World = 3
     },
     Candy_Rebel = {
@@ -722,7 +722,7 @@ local Quests = {
         EnemyName = "Candy Rebel",
         LevelQuest = 2,
         CFramePos = CFrame.new(151.1982421875, 23.890714645385742, -12774.6171875),
-        QuestGiver = " ",
+        QuestGiver = "Chocolate Quest Giver 2",
         World = 3
     },
     Candy_Pirate = {
@@ -731,7 +731,7 @@ local Quests = {
         EnemyName = "Candy Pirate",
         LevelQuest = 1,
         CFramePos = CFrame.new(-1149.3280029296875, 13.57590389251709, -14445.6142578125),,
-        QuestGiver = " ",
+        QuestGiver = "Candy Cane Quest Giver",
         World = 3
     },
     Snow_Demon = {
@@ -740,7 +740,7 @@ local Quests = {
         EnemyName = "Snow Demon",
         LevelQuest = 2,
         CFramePos = CFrame.new(-1149.3280029296875, 13.57590389251709, -14445.6142578125),,
-        QuestGiver = " ",
+        QuestGiver = "Candy Cane Quest Giver",
         World = 3
     }
 }
@@ -1189,9 +1189,9 @@ function QuestsData.CalculateLevel(Level)
     end
 end
 
-local FirstSea = {}
-local SecondSea = {}
-local ThirdSea = {}
+local FirstSea = 1
+local SecondSea = 2
+local ThirdSea = 3
 
 for i,v in pairs(Quests) do
     if v.World == 1 then
@@ -1202,9 +1202,8 @@ for i,v in pairs(Quests) do
         table.insert(ThirdSea, v.EnemyName)
     end
 end
-
-local QuestsData.FirstSea = FirstSea
-local QuestsData.SecondSea = SecondSea
-local QuestsData.ThirdSea = ThirdSea
+QuestsData.FirstSea = FirstSea
+QuestsData.SecondSea = SecondSea
+QuestsData.ThirdSea = ThirdSea
 
 return QuestsData
