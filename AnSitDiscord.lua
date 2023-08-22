@@ -1189,9 +1189,9 @@ function QuestsData.CalculateLevel(Level)
     end
 end
 
-local FirstSea = 1
-local SecondSea = 2
-local ThirdSea = 3
+local FirstSea = {}
+local SecondSea = {}
+local ThirdSea = {}
 
 for i,v in pairs(Quests) do
     if v.World == 1 then
