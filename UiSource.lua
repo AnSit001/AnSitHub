@@ -996,7 +996,7 @@ DRR["77"]["Name"] = [[ActualTextbox]];
 
 -- DrRay.Folder.Toggle
 DRR["78"] = Instance.new("Frame", DRR["30"]);
-DRR["78"]["Active"] = false;
+DRR["78"]["Active"] = true;
 DRR["78"]["BorderSizePixel"] = 0;
 DRR["78"]["BackgroundColor3"] = Color3.fromRGB(40, 45, 62);
 DRR["78"]["BackgroundTransparency"] = 0.4000000059604645;
@@ -1079,7 +1079,7 @@ DRR["80"]["ApplyStrokeMode"] = Enum.ApplyStrokeMode.Border;
 DRR["81"] = Instance.new("TextButton", DRR["7d"]);
 DRR["81"]["BorderSizePixel"] = 0;
 DRR["81"]["BackgroundColor3"] = Color3.fromRGB(40, 45, 62);
-DRR["81"]["Selectable"] = true;
+DRR["81"]["Selectable"] = false;
 DRR["81"]["Size"] = UDim2.new(1, 0, 1, 0);
 DRR["81"]["Name"] = [[Label]];
 DRR["81"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
@@ -1693,25 +1693,25 @@ function UILIB.newTab(name, img)
 		end)
 		
 		
-		if realToggle == true then
-			newToggle.Label.BackgroundColor3 = GlobalColor2
-		elseif realToggle == false then
+		if realToggle == false then
 			newToggle.Label.BackgroundColor3 = GlobalColor1
+		elseif realToggle == true then
+			newToggle.Label.BackgroundColor3 = GlobalColor2
 		end
 		
 		
 		
 		newToggle.Label.Label.MouseButton1Click:Connect(function()
 			
-			if realToggle == true then
-				realToggle = false
-				local twColorOn = twServ:Create(newToggle.Label, TweenInfo.new(0.2), { BackgroundColor3 = GlobalColor1 })
+			if realToggle == false then
+				realToggle = true
+				local twColorOn = twServ:Create(newToggle.Label, TweenInfo.new(0.2), { BackgroundColor3 = GlobalColor2 })
 				twColorOn:Play()
 				
 				func(realToggle)
-			elseif realToggle == false then
-				realToggle = true
-				local twColorOn = twServ:Create(newToggle.Label, TweenInfo.new(0.2), { BackgroundColor3 = GlobalColor2 })
+			elseif realToggle == true then
+				realToggle = false
+				local twColorOn = twServ:Create(newToggle.Label, TweenInfo.new(0.2), { BackgroundColor3 = GlobalColor1 })
 				twColorOn:Play()
 				
 				func(realToggle)
