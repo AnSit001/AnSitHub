@@ -996,7 +996,7 @@ DRR["77"]["Name"] = [[ActualTextbox]];
 
 -- DrRay.Folder.Toggle
 DRR["78"] = Instance.new("Frame", DRR["30"]);
-DRR["78"]["Active"] = true;
+DRR["78"]["Active"] = false;
 DRR["78"]["BorderSizePixel"] = 0;
 DRR["78"]["BackgroundColor3"] = Color3.fromRGB(40, 45, 62);
 DRR["78"]["BackgroundTransparency"] = 0.4000000059604645;
