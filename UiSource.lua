@@ -1693,10 +1693,10 @@ function UILIB.newTab(name, img)
 		end)
 		
 		
-		if realToggle == false then
-			newToggle.Label.BackgroundColor3 = GlobalColor1
-		elseif realToggle == true then
+		if realToggle == true then
 			newToggle.Label.BackgroundColor3 = GlobalColor2
+		elseif realToggle == false then
+			newToggle.Label.BackgroundColor3 = GlobalColor1
 		end
 		
 		
