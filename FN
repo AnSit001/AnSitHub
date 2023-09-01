@@ -17,8 +17,7 @@ function v129(p15)
     return v130;
 end;
 
-Notification.new("<Color=White>An Sit Hub<Color=/>"):Display()
-
+Notification.new("<Color=White>Fruit Notifier unlocked!<Color=/>"):Display()
 
 
 
