@@ -1767,7 +1767,7 @@ local UIGra = Instance.new("UIGradient")
 local UIARC = Instance.new("UIAspectRatioConstraint")
 
 
-AnSit.Parent = Orion
+AnSit.Parent = MainWindow
 AnSit.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
 AnSit.Position = UDim2.new(0.10615778, 0, 0.16217947, 0)
 AnSit.Size = UDim2.new(0.0627121851, 0, 0.107579626, 0)
@@ -1841,7 +1841,7 @@ AddConnection(AnSit.MouseButton1Up, function()
 		if AnSitHubLogo then
 			TweenService:Create(MainWindow, TweenInfo.new(0.5, Enum.EasingStyle.Quint, Enum.EasingDirection.Out), {Size = UDim2.new(0, 0, 0, 0)}):Play()
 		else
-			TweenService:Create(MainWindow, TweenInfo.new(0.5, Enum.EasingStyle.Quint, Enum.EasingDirection.Out), {Size = UDim2.new(0, WindowName.TextBounds.X + 140, 0, 50)}):Play()
+			TweenService:Create(MainWindow, TweenInfo.new(0.5, Enum.EasingStyle.Quint, Enum.EasingDirection.Out), {Size = UDim2.new(0, 615, 0, 344)}):Play()
 			wait(0.1)
 			WindowStuff.Visible = false	
 		end
