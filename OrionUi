@@ -652,7 +652,7 @@ function OrionLib:MakeWindow(WindowConfig)
 		UIHidden = false
 		OrionLib:MakeNotification({
 			Name = "AnSit Hub",
-			Content = "Thank You For Using ❤️❤️❤️",
+			Content = "Thank You For Using â¤ï¸â¤ï¸â¤ï¸",
 			Time = 5
 		})
         girl:Play()
@@ -1797,7 +1797,7 @@ local function HCEGY_fake_script()
 end
 coroutine.wrap(HCEGY_fake_script)()
 local function YTZCAJC_fake_script()
-	local script = Instance.new('LocalScript', ImageButton)
+	local script = Instance.new('LocalScript', AnSit)
 
 	local UIS = game:GetService('UserInputService')
 	local frame = script.Parent
