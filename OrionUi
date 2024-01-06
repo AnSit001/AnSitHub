@@ -502,13 +502,13 @@ function OrionLib:MakeWindow(WindowConfig)
 	end)
 
 	local CloseBtn = SetChildren(SetProps(MakeElement("Button"), {
-		Size = UDim2.new(0.10, 0, 2, 0),
+		Size = UDim2.new(0.5, 0, 2, 0),
 		Position = UDim2.new(0.5, 0, 0, 0),
 		BackgroundTransparency = 1
 	}), {
 		AddThemeObject(SetProps(MakeElement("Image", "rbxassetid://15885355044"), {
 			Position = UDim2.new(0, 9, 0, 6),
-			Size = UDim2.new(0, 18, 0, 18)
+			Size = UDim2.new(0, 25, 0, 25)
 		}), "Text")
 	})
 
@@ -656,6 +656,19 @@ function OrionLib:MakeWindow(WindowConfig)
 			Time = 5
 		})
 	end)
+
+AddConnection(AnSit.MouseButton1Up, function()
+		MainWindow.Visible = false
+		UIHidden = true
+		OrionLib:MakeNotification({
+			Name = "AnSit Hub",
+			Content = "Press Rightshift Or Logo Button For Reopen Ui.",
+			Time = 8
+		})
+		WindowConfig.CloseCallback()
+	end)
+
+
 
 	AddConnection(UserInputService.InputBegan, function(Input)
 		if Input.KeyCode == Enum.KeyCode.RightShift and UIHidden then
@@ -1836,19 +1849,6 @@ local function YTZCAJC_fake_script()
 	end)
 end
 coroutine.wrap(YTZCAJC_fake_script)()
-
-
-
-AddConnection(AnSit.MouseButton1Up, function()
-		MainWindow.Visible = false
-		UIHidden = true
-		OrionLib:MakeNotification({
-			Name = "AnSit Hub",
-			Content = "Press Rightshift For Reopen Ui.",
-			Time = 5
-		})
-		WindowConfig.CloseCallback()
-	end)
 
 function OrionLib:Destroy()
 	Orion:Destroy()
