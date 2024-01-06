@@ -502,7 +502,7 @@ function OrionLib:MakeWindow(WindowConfig)
 	end)
 
 	local CloseBtn = SetChildren(SetProps(MakeElement("Button"), {
-		Size = UDim2.new(0.5, 0, 1, 0),
+		Size = UDim2.new(0.10, 0, 2, 0),
 		Position = UDim2.new(0.5, 0, 0, 0),
 		BackgroundTransparency = 1
 	}), {
@@ -1776,12 +1776,12 @@ AnSit.Size = UDim2.new(0.0627121851, 0, 0.107579626, 0)
 AnSit.Image = "rbxassetid://15102383203"
 
 UICor.CornerRadius = UDim.new(0, 30)
-UICor.Parent = ImageButton
+UICor.Parent = AnSit
 
 UIGra.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(170, 40, 200)), ColorSequenceKeypoint.new(0.32, Color3.fromRGB(146, 70, 100)), ColorSequenceKeypoint.new(0.65, Color3.fromRGB(255, 100, 70)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(96, 150, 100))}
-UIGra.Parent = ImageButton
+UIGra.Parent = AnSit
 
-UIARC.Parent = ImageButton
+UIARC.Parent = AnSit
 UIARC.AspectRatio = 0.988
 
 
@@ -1844,7 +1844,7 @@ AddConnection(AnSit.MouseButton1Up, function()
 		UIHidden = true
 		OrionLib:MakeNotification({
 			Name = "AnSit Hub",
-			Content = "Press Rightshift or Logo Button For Reopen Ui.",
+			Content = "Press Rightshift For Reopen Ui.",
 			Time = 5
 		})
 		WindowConfig.CloseCallback()
