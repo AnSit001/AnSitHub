@@ -465,9 +465,8 @@ end
 function OrionLib:MakeWindow(WindowConfig)
 	local FirstTab = true
 	local Minimized = false
-	local Loaded = false
+	local Loaded = true
 	local UIHidden = false
-    local AnSitHubLogo = false
 
 	WindowConfig = WindowConfig or {}
 	WindowConfig.Name = WindowConfig.Name or "Orion Library"
@@ -503,7 +502,7 @@ function OrionLib:MakeWindow(WindowConfig)
 	end)
 
 	local CloseBtn = SetChildren(SetProps(MakeElement("Button"), {
-		Size = UDim2.new(0.5, 0, 2, 0),
+		Size = UDim2.new(0.10, 0, 2, 0),
 		Position = UDim2.new(0.5, 0, 0, 0),
 		BackgroundTransparency = 1
 	}), {
@@ -1761,13 +1760,16 @@ end
 
 
 
+local Loz = Instance.new("ScreenGui")
 local AnSit = Instance.new("ImageButton")
 local UICor = Instance.new("UICorner")
 local UIGra = Instance.new("UIGradient")
 local UIARC = Instance.new("UIAspectRatioConstraint")
 
+Loz.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+Loz.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
 
-AnSit.Parent = MainWindow
+AnSit.Parent = Loz
 AnSit.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
 AnSit.Position = UDim2.new(0.10615778, 0, 0.16217947, 0)
 AnSit.Size = UDim2.new(0.0627121851, 0, 0.107579626, 0)
@@ -1838,14 +1840,14 @@ coroutine.wrap(YTZCAJC_fake_script)()
 
 
 AddConnection(AnSit.MouseButton1Up, function()
-		if AnSitHubLogo then
-			TweenService:Create(MainWindow, TweenInfo.new(0.5, Enum.EasingStyle.Quint, Enum.EasingDirection.Out), {Size = UDim2.new(0, 0, 0, 0)}):Play()
-		else
-			TweenService:Create(MainWindow, TweenInfo.new(0.5, Enum.EasingStyle.Quint, Enum.EasingDirection.Out), {Size = UDim2.new(0, 615, 0, 344)}):Play()
-			wait(0.1)
-			WindowStuff.Visible = false	
-		end
-		AnSitHubLogo = not AnSitHubLogo
+		MainWindow.Visible = false
+		UIHidden = true
+		OrionLib:MakeNotification({
+			Name = "AnSit Hub",
+			Content = "Press Rightshift For Reopen Ui.",
+			Time = 5
+		})
+		WindowConfig.CloseCallback()
 	end)
 
 function OrionLib:Destroy()
