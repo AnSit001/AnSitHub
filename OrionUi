@@ -648,14 +648,13 @@ function OrionLib:MakeWindow(WindowConfig)
 
 
 	AddConnection(CloseBtn.MouseButton1Up, function()
-		MainWindow.Visible = false
+		MainWindow.Visible = true
 		UIHidden = false
 		OrionLib:MakeNotification({
 			Name = "AnSit Hub",
-			Content = "Thank You For Using â¤ï¸â¤ï¸â¤ï¸",
+			Content = "Thank You For Using <3",
 			Time = 5
 		})
-        girl:Play()
 	end)
 
 	AddConnection(UserInputService.InputBegan, function(Input)
@@ -1767,7 +1766,6 @@ local UICor = Instance.new("UICorner")
 local UIGra = Instance.new("UIGradient")
 local UIARC = Instance.new("UIAspectRatioConstraint")
 
-
 Loz.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
 Loz.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
 
@@ -1849,22 +1847,8 @@ AddConnection(AnSit.MouseButton1Up, function()
 			Content = "Press Rightshift or Logo Button For Reopen Ui.",
 			Time = 5
 		})
-        closesound:Play()
 		WindowConfig.CloseCallback()
 	end)
-
-
-local closesound = Instance.new("Sound")
-closesound.SoundId = "rbxassetid://8120936755"
-closesound.Looped = true
-closesound.Parent = workspace
-
-
-local girl = Instance.new("Sound")
-girl.SoundId = "rbxassetid://9060788686"
-girl.Looped = true
-girl.Parent = workspace
-
 
 function OrionLib:Destroy()
 	Orion:Destroy()
