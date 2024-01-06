@@ -465,8 +465,9 @@ end
 function OrionLib:MakeWindow(WindowConfig)
 	local FirstTab = true
 	local Minimized = false
-	local Loaded = true
+	local Loaded = false
 	local UIHidden = false
+    local AnSitHubLogo = false
 
 	WindowConfig = WindowConfig or {}
 	WindowConfig.Name = WindowConfig.Name or "Orion Library"
