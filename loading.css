@@ -1,0 +1,122 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+
+
+/* Loading Screen */
+.preloader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transition: 1s;
+}
+
+.preloader::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  width: 50%;
+  height: 100%;
+  background: #000000;
+  transition: 1s;
+}
+
+.preloader.complete::before {
+  left: -50%;
+}
+
+.preloader::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  width: 50%;
+  height: 100%;
+  background: #000000;
+  transition: 1s;
+}
+
+.preloader.complete::after {
+  right: -50%;
+}
+
+
+
+
+/* Loading Animation */
+.loader {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 40px;
+  height: 40px;
+  box-sizing: border-box;
+  border: 3px solid #ffffff;
+  animation: loaderAnimation 2s linear infinite;
+  z-index: 9999;
+}
+
+.loader::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background: #ffffff;
+  animation: loaderAnimationBg 2s linear infinite;
+}
+
+.preloader.complete {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+
+}
+
+@keyframes loaderAnimation {
+  0% {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+
+  25% {
+    transform: translate(-50%, -50%) rotate(180deg);
+  }
+
+  50% {
+    transform: translate(-50%, -50%) rotate(180deg);
+  }
+
+  75% {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+
+  100% {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+
+@keyframes loaderAnimationBg {
+  0% {
+    height: 0;
+  }
+
+  25% {
+    height: 0;
+  }
+
+  50% {
+    height: 100%;
+  }
+
+  75% {
+    height: 100%;
+  }
+
+  100% {
+    height: 0;
+  }
+}
