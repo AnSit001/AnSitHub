@@ -326,9 +326,9 @@ end)
 CreateElement("ScrollFrame", function(Color, Width)
         local ScrollFrame = Create("ScrollingFrame", {
                 BackgroundTransparency = 1,
-                MidImage = "rbxassetid://7445543667",
-                BottomImage = "rbxassetid://7445543667",
-                TopImage = "rbxassetid://7445543667",
+                MidImage = "rbxassetid://1730990894",
+                BottomImage = "rbxassetid://1730990894",
+                TopImage = "rbxassetid://1730990894",
                 ScrollBarImageColor3 = Color,
                 BorderSizePixel = 0,
                 ScrollBarThickness = Width,
